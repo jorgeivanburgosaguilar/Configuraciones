@@ -1,0 +1,10 @@
+{
+    "recommendations": [
+        "budparr.language-hugo-vscode",
+        "bungcip.better-toml",
+        "editorconfig.editorconfig",
+        "yzhang.markdown-all-in-one",
+        "esbenp.prettier-vscode",
+        "stylelint.vscode-stylelint"
+    ]
+}
