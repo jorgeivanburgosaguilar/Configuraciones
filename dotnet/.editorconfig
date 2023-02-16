@@ -8,7 +8,7 @@ end_of_line = lf
 charset = utf-8
 trim_trailing_whitespace = true
 insert_final_newline = true
-max_line_length = 80
+max_line_length = 100
 
 # Microsoft .NET properties
 csharp_new_line_before_members_in_object_initializers = false
@@ -37,18 +37,18 @@ resharper_braces_for_foreach = not_required
 resharper_braces_for_ifelse = not_required_for_both
 resharper_braces_for_while = not_required
 resharper_braces_redundant = true
-resharper_cpp_max_line_length = 120
+resharper_cpp_max_line_length = 100
 resharper_csharp_insert_final_newline = false
 resharper_csharp_max_line_length = 100
 resharper_csharp_wrap_chained_method_calls = chop_if_long
 resharper_css_brace_style = next_line
 resharper_css_insert_final_newline = false
-resharper_css_max_line_length = 120
+resharper_css_max_line_length = 100
 resharper_html_attribute_indent = single_indent
 resharper_html_insert_final_newline = false
-resharper_html_max_line_length = 120
+resharper_html_max_line_length = 100
 resharper_js_insert_final_newline = false
-resharper_js_max_line_length = 120
+resharper_js_max_line_length = 100
 resharper_no_indent_inside_elements = html
 resharper_place_accessorholder_attribute_on_same_line = false
 resharper_resx_insert_final_newline = false
@@ -56,7 +56,7 @@ resharper_resx_max_line_length = 2147483647
 resharper_show_autodetect_configure_formatting_tip = false
 resharper_use_heuristics_for_body_style = true
 resharper_vb_insert_final_newline = false
-resharper_vb_max_line_length = 80
+resharper_vb_max_line_length = 100
 resharper_wrap_chained_binary_expressions = chop_if_long
 resharper_xmldoc_insert_final_newline = false
 resharper_xmldoc_max_line_length = 100
@@ -126,17 +126,13 @@ csharp_style_prefer_not_pattern = true:suggestion
 csharp_style_prefer_extended_property_pattern = true:suggestion
 
 [*.{cs,vb}]
-#### Naming styles ####
-
 # Naming rules
 dotnet_naming_rule.interface_should_be_begins_with_i.severity = suggestion
 dotnet_naming_rule.interface_should_be_begins_with_i.symbols = interface
 dotnet_naming_rule.interface_should_be_begins_with_i.style = begins_with_i
-
 dotnet_naming_rule.types_should_be_pascal_case.severity = suggestion
 dotnet_naming_rule.types_should_be_pascal_case.symbols = types
 dotnet_naming_rule.types_should_be_pascal_case.style = pascal_case
-
 dotnet_naming_rule.non_field_members_should_be_pascal_case.severity = suggestion
 dotnet_naming_rule.non_field_members_should_be_pascal_case.symbols = non_field_members
 dotnet_naming_rule.non_field_members_should_be_pascal_case.style = pascal_case
@@ -145,11 +141,9 @@ dotnet_naming_rule.non_field_members_should_be_pascal_case.style = pascal_case
 dotnet_naming_symbols.interface.applicable_kinds = interface
 dotnet_naming_symbols.interface.applicable_accessibilities = public, internal, private, protected, protected_internal, private_protected
 dotnet_naming_symbols.interface.required_modifiers = 
-
 dotnet_naming_symbols.types.applicable_kinds = class, struct, interface, enum
 dotnet_naming_symbols.types.applicable_accessibilities = public, internal, private, protected, protected_internal, private_protected
 dotnet_naming_symbols.types.required_modifiers = 
-
 dotnet_naming_symbols.non_field_members.applicable_kinds = property, event, method
 dotnet_naming_symbols.non_field_members.applicable_accessibilities = public, internal, private, protected, protected_internal, private_protected
 dotnet_naming_symbols.non_field_members.required_modifiers = 
@@ -159,12 +153,10 @@ dotnet_naming_style.begins_with_i.required_prefix = I
 dotnet_naming_style.begins_with_i.required_suffix = 
 dotnet_naming_style.begins_with_i.word_separator = 
 dotnet_naming_style.begins_with_i.capitalization = pascal_case
-
 dotnet_naming_style.pascal_case.required_prefix = 
 dotnet_naming_style.pascal_case.required_suffix = 
 dotnet_naming_style.pascal_case.word_separator = 
 dotnet_naming_style.pascal_case.capitalization = pascal_case
-
 dotnet_naming_style.pascal_case.required_prefix = 
 dotnet_naming_style.pascal_case.required_suffix = 
 dotnet_naming_style.pascal_case.word_separator = 
