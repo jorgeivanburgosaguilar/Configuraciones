@@ -126,6 +126,15 @@ csharp_style_prefer_not_pattern = true:suggestion
 csharp_style_prefer_extended_property_pattern = true:suggestion
 
 [*.{cs,vb}]
+indent_style = space
+indent_size = 4
+tab_width = 4
+end_of_line = crlf
+charset = utf-8-bom
+trim_trailing_whitespace = true
+insert_final_newline = false
+max_line_length = 100
+
 # Naming rules
 dotnet_naming_rule.interface_should_be_begins_with_i.severity = suggestion
 dotnet_naming_rule.interface_should_be_begins_with_i.symbols = interface
@@ -183,7 +192,7 @@ dotnet_style_allow_statement_immediately_after_block_experimental = true:silent
 dotnet_code_quality_unused_parameters = all:suggestion
 dotnet_style_parentheses_in_other_operators = never_if_unnecessary:silent
 
-[*.{asax,ascx,aspx,axaml,cs,cshtml,master,paml,razor,skin,vb,xaml,xamlx,xoml}]
+[*.{asax,ascx,aspx,axaml,cshtml,master,paml,razor,skin,xaml,xamlx,xoml}]
 indent_style = space
 indent_size = 4
 tab_width = 4
