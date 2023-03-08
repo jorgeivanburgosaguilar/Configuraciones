@@ -10,12 +10,12 @@ trim_trailing_whitespace = true
 insert_final_newline = true
 max_line_length = 100
 
-[*.{ascx}]
+[*.ascx]
 indent_style = space
 indent_size = 4
 tab_width = 4
 end_of_line = crlf
-charset = utf-8-bom
+charset = utf-8
 trim_trailing_whitespace = true
 insert_final_newline = false
 max_line_length = 100
@@ -25,17 +25,7 @@ indent_style = space
 indent_size = 2
 tab_width = 2
 end_of_line = crlf
-charset = utf-8-bom
-trim_trailing_whitespace = true
-insert_final_newline = false
-max_line_length = 100
-
-[*.{svg}]
-indent_style = space
-indent_size = 2
-tab_width = 2
-end_of_line = lf
 charset = utf-8
 trim_trailing_whitespace = true
 insert_final_newline = false
-max_line_length = off
+max_line_length = 100
