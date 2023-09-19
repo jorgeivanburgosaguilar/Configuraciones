@@ -1,10 +1,13 @@
 {
     "recommendations": [
-        "budparr.language-hugo-vscode",
-        "bungcip.better-toml",
-        "editorconfig.editorconfig",
-        "yzhang.markdown-all-in-one",
-        "esbenp.prettier-vscode",
-        "stylelint.vscode-stylelint"
+      "budparr.language-hugo-vscode",
+      "editorconfig.editorconfig",
+      "yzhang.markdown-all-in-one",
+      "esbenp.prettier-vscode",
+      "stylelint.vscode-stylelint",
+      "tamasfe.even-better-toml",
+      "dbaeumer.vscode-eslint",
+      "ecmel.vscode-html-css",
+      "dotjoshjohnson.xml"
     ]
 }
