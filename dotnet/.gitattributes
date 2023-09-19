@@ -9,6 +9,8 @@
 *.editorconfig text eol=lf
 *.gitattributes text eol=lf
 *.gitignore text eol=lf
+*.sql text eol=crlf
+*.bat text eol=crlf
 
 #################################
 # .NET
@@ -24,6 +26,7 @@
 *.axaml text eol=crlf
 *.cshtml text eol=crlf
 *.master text eol=crlf
+*.Master text eol=crlf
 *.paml text eol=crlf
 *.razor text eol=crlf
 *.skin text eol=crlf
@@ -62,3 +65,4 @@
 *.filters text eol=crlf
 *.vcxitems text eol=crlf
 *.DotSettings text eol=crlf
+*.pubxml text eol=crlf
