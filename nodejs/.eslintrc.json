@@ -1,0 +1,13 @@
+{
+  "env": {
+    "node": true,
+    "es2023": true
+  },
+  "extends": ["google", "prettier"],
+  "overrides": [],
+  "parserOptions": {
+    "ecmaVersion": 2023,
+    "sourceType": "module"
+  },
+  "rules": {}
+}
