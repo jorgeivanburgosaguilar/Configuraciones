@@ -1,0 +1,46 @@
+[user]
+	name = Jorge Ivan Burgos Aguilar
+	email = 15068542+jorgeivanburgosaguilar@users.noreply.github.com
+
+[difftool "araxis"]
+    path = "/c/Program Files/Araxis/Araxis Merge/compare.exe"
+    renames = true
+    trustExitCode = false
+    
+[diff]
+    tool = araxis
+    stat = true
+    
+[mergetool "araxis"]
+    path = "/c/Program Files/Araxis/Araxis Merge/compare.exe"
+    keepTemporaries = false
+    keepBackup = false
+    trustExitCode = false
+    
+[merge]
+    tool = araxis
+    stat = true
+	
+[alias]
+af = difftool --tool=araxis
+afs = difftool --tool=araxis --staged
+ad = difftool --tool=araxis --dir-diff
+ads = difftool --tool=araxis --dir-diff --staged
+staash = stash --all
+    
+[guitool "Araxis Merge Unstaged Changes"]
+	cmd = "git difftool --tool=araxis -y"
+	needsfile = yes
+	
+[guitool "Araxis Merge Staged Changes"]
+	cmd = "git difftool --tool=araxis --staged -y"
+	needsfile = yes
+    
+[core]
+	autocrlf = false
+	editor = code --wait
+    
+[difftool]
+	prompt = false
+[init]
+	defaultBranch = main
