@@ -51,6 +51,9 @@ resharper_js_insert_final_newline = false
 resharper_js_max_line_length = 100
 resharper_no_indent_inside_elements = html
 resharper_place_accessorholder_attribute_on_same_line = false
+resharper_place_each_decorator_on_new_line = true
+resharper_protobuf_insert_final_newline = false
+resharper_protobuf_max_line_length = 100
 resharper_resx_insert_final_newline = false
 resharper_resx_max_line_length = 2147483647
 resharper_show_autodetect_configure_formatting_tip = false
@@ -192,7 +195,7 @@ dotnet_style_allow_statement_immediately_after_block_experimental = true:silent
 dotnet_code_quality_unused_parameters = all:suggestion
 dotnet_style_parentheses_in_other_operators = never_if_unnecessary:silent
 
-[*.{asax,ascx,aspx,axaml,c,c++,cc,cginc,compute,cp,cpp,cppm,cs,cshtml,css,cu,cuh,cxx,fx,fxh,h,hh,hlsl,hlsli,hlslinc,hpp,htm,html,hxx,inc,inl,ino,ipp,ixx,js,json,jsx,master,mpp,mq4,mq5,mqh,paml,razor,resjson,skin,tpp,ts,tsx,usf,ush,vb,xaml,xamlx,xoml}]
+[*.{asax,ascx,aspx,axaml,c,c++,c++m,cc,ccm,cginc,compute,cp,cpp,cppm,cs,cshtml,css,cu,cuh,cxx,cxxm,fx,fxh,h,hh,hlsl,hlsli,hlslinc,hpp,htm,html,hxx,inc,inl,ino,ipp,ixx,js,json,jsx,master,mpp,mq4,mq5,mqh,mxx,paml,razor,resjson,skin,tpp,ts,tsx,usf,ush,vb,xaml,xamlx,xoml}]
 indent_style = space
 indent_size = 4
 tab_width = 4
@@ -208,6 +211,16 @@ indent_size = 2
 tab_width = 2
 end_of_line = crlf
 charset = utf-8-bom
+trim_trailing_whitespace = true
+insert_final_newline = false
+max_line_length = 100
+
+[*.proto]
+indent_style = space
+indent_size = 4
+tab_width = 4
+end_of_line = lf
+charset = utf-8
 trim_trailing_whitespace = true
 insert_final_newline = false
 max_line_length = 100
