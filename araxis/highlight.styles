@@ -1,0 +1,1885 @@
+# Adapted from individual scintilla .properties files.
+#
+# Colours are #RRGGBB
+
+colour.default=fore:#000000
+colour.black=fore:#000000
+colour.red=fore:#FF0000
+colour.green=fore:#00FF00
+colour.yellow=fore:#FFFF00
+colour.blue=fore:#0000FF
+colour.magenta=fore:#FF00FF
+colour.cyan=fore:#00FFFF
+colour.white=fore:#FFFFFF
+colour.3qred=fore:#BF0000
+colour.3qgreen=fore:#00BF00
+colour.3qyellow=fore:#BFBF00
+colour.3qblue=fore:#0000BF
+colour.3qmagenta=fore:#BF00BF
+colour.3qcyan=fore:#00BFBF
+colour.3qwhite=fore:#BFBFBF
+colour.halfred=fore:#7F0000
+colour.halfgreen=fore:#007F00
+colour.halfyellow=fore:#7F7F00
+colour.halfblue=fore:#00007F
+colour.halfmagenta=fore:#7F007F
+colour.halfcyan=fore:#007F7F
+colour.halfwhite=fore:#7F7F7F
+colour.1qred=fore:#3F0000
+colour.1qgreen=fore:#003F00
+colour.1qyellow=fore:#3F3F00
+colour.1qblue=fore:#00003F
+colour.1qmagenta=fore:#3F003F
+colour.1qcyan=fore:#003F3F
+colour.1qwhite=fore:#3F3F3F
+
+# common colours
+colour.default=$(colour.black)
+colour.whitespace=$(colour.default)
+colour.number=$(colour.blue)
+colour.literalstring=$(colour.halfgreen)
+colour.comment=$(colour.halfwhite)
+colour.operator=$(colour.halfwhite)
+colour.keyword=fore:#904400
+colour.keyword2=$(colour.3qblue)
+colour.keyword3=$(colour.1qblue)
+colour.preprocessor=$(colour.halfmagenta)
+colour.identifier=$(colour.default)
+colour.identifier2=$(colour.default)
+colour.identifier3=$(colour.default)
+colour.identifierinstring=$(colour.halfblue)
+colour.variable=$(colour.halfmagenta)
+colour.element=$(colour.halfblue)
+colour.entity=$(colour.number)
+colour.directive=$(colour.preprocessor)
+colour.error=$(colour.3qred)
+colour.value=$(colour.number)
+
+# semi-colon separated list of lexers
+lexers=cpp;vb;vbscript;hypertext;xml;caml;css;erlang;fortran;f77;lisp;perl;sql;smalltalk;python;ruby;pascal;generic;au3;scala;markdown
+
+description.lexer.cpp=C-like
+description.lexer.scala=Scala
+description.lexer.vb=Visual Basic
+description.lexer.vbscript=VBScript
+description.lexer.hypertext=Hypertext
+description.lexer.xml=XML
+description.lexer.caml=Caml
+description.lexer.css=CSS
+description.lexer.erlang=Erlang
+description.lexer.fortran=Fortran
+description.lexer.f77=F77
+description.lexer.lisp=Lisp
+description.lexer.perl=Perl
+description.lexer.sql=SQL
+description.lexer.smalltalk=Smalltalk
+description.lexer.python=Python
+description.lexer.ruby=Ruby
+description.lexer.pascal=Pascal
+description.lexer.generic=Generic
+description.lexer.markdown=Markdown
+description.lexer.au3=AutoIt3
+
+description.style.default=Default
+description.style.whitespace=Whitespace
+description.style.operators=Operators
+description.style.identifiers=Identifiers
+description.style.variables=Variables
+description.style.characters=Characters
+description.style.numbers=Numbers
+description.style.symbols=Symbols
+description.style.strings=Strings
+description.style.literalstrings=Literal strings
+description.style.singlequotedstrings=Single-quoted strings
+description.style.doublequotedstrings=Double-quoted strings
+description.style.eolstringnotclosed=End of line where string is not closed
+description.style.preprocessor=Preprocessor directives
+description.style.blockcomments=Comments (block)
+description.style.linecomments=Comments (line)
+description.style.comments=Comments
+description.style.commentkeyword=Comment keywords
+description.style.commentkeyworderror=Comment keyword errors
+description.style.doccomments=Comments (documentation)
+description.style.uuids=UUIDs
+description.style.keywords=Keywords
+description.style.keywords2=Keywords 2
+description.style.keywords3=Keywords 3
+
+#== C-like languages
+
+# sma files are Small script (C-like)
+file.patterns.cpp=*.c;*.cc;*.cpp;*.cxx;*.h;*.hh;*.hpp;*.hxx;*.sma;*.m;*.mm
+# pln, inc and t are SilkTest (4Test) files.
+file.patterns.test=*.pln;*.inc;*.t
+file.patterns.cs=*.cs
+file.patterns.d=*.d
+file.patterns.rc=*.rc;*.rc2;*.dlg
+file.patterns.idl=*.idl;*.odl
+file.patterns.flash=*.as;*.asc;*.jsfl
+file.patterns.ch=*.ch;*.chf;*.chs
+file.patterns.sdl=*.sdl
+file.patterns.scala=*.sbt;*.sc;*.scala
+
+lexer.*.java=cpp
+lexer.$(file.patterns.scala)=scala
+lexer.$(file.patterns.cpp)=cpp
+lexer.$(file.patterns.d)=cpp
+lexer.$(file.patterns.rc)=cpp
+lexer.$(file.patterns.idl)=cpp
+lexer.$(file.patterns.cs)=cpp
+lexer.*.js=cpp
+lexer.$(file.patterns.test)=cpp
+lexer.$(file.patterns.flash)=cpp
+lexer.$(file.patterns.ch)=cpp
+lexer.$(file.patterns.sdl)=cpp
+lexer.*.md=markdown
+
+keywordclass.sdl=ABSTRACT ACTIVE ADDING AGGREGATION ALTERNATIVE AND ANYASASSOCIATION ATLEAST BLOCK BREAK CALL CHANNEL CHOICE COMMENT COMPOSITION	CONNECT CONNECTION CONSTANTS CONTINUE CREATE DCL DECISION DEFAULT ELSE ENDALTERNATIVE ENDBLOCK ENDCHANNEL ENDCONNECTION ENDDECISION ENDEXCEPTIONHANDLER ENDINTERFACE ENDMACRO ENDMETHOD ENDOBJECT ENDOPERATOR ENDPACKAGE ENDPROCEDURE ENDPROCESS ENDSELECT ENDSTATE ENDSUBSTRUCTURE ENDSYNTYPE ENDSYSTEM ENDTYPE ENDVALUE ENDWHILE ENV EXCEPTION EXCEPTIONHANDLER EXPORT EXPORTED EXTERNAL FI FINALIZED FROM GATE HANDLE IF IMPORT IN INHERITS INPUT INTERFACE JOIN LITERALS LOOP MACRO MACRODEFINITION MACROID METHOD METHODS MOD NAMECLASS NEXTSTATE NODELAY NONE NOT NOW OBJECT OFFSPRING ONEXCEPTION OPERATOR OPERATORS OPTIONAL OR ORDERED OUT OUTPUT PACKAGE PARENT PRIORITY PRIVATE PROCEDURE PROTECTED PROCESS PROVIDED PUBLIC RAISE REDEFINED REFERENCED REM REMOTE RESET RETURN SAVE SELECT SELF SENDER SET SIGNAL SIGNALLIST SIGNALSET SIZE SPELLING START STATE STOP STRUCT SUBSTRUCTURE SYNONYM SYNTYPE SYSTEM TASK THEN THIS TIMER TO TRY TYPE USE VALUE VIA VIRTUAL WHILE WITH XOR CONSTANT REPRESENTATION FPAR RETURNS
+keywords.$(file.patterns.sdl)=$(keywordclass.sdl)
+
+keywordclass.cpp=and and_eq asm auto bitand bitor bool break case catch char class compl const const_cast continue default delete do double dynamic_cast else enum explicit export extern false float for friend goto if inline int long char16_t unichar mutable namespace new not not_eq operator or or_eq private protected public register reinterpret_cast return short signed sizeof static static_cast struct switch template this throw true try typedef typeid typename union unsigned using virtual void volatile wchar_t while xor xor_eq size_t int8_t int16_t int32_t int64_t char8_t char16_t char32_t
+keywords.$(file.patterns.cpp)=$(keywordclass.cpp)
+# keywords2 is for highlighting user defined keywords or function calls or similar
+#keywords2.$(file.patterns.cpp)=file
+# keywords3 is for doc comment keywords, highlighted in style 17
+#CPP doxygen
+keywords3.$(file.patterns.cpp)=a addindex addtogroup anchor arg attention author b brief bug c class code date def defgroup deprecated dontinclude e em endcode endhtmlonly endif endlatexonly endlink endverbatim enum example exception f$ f[ f] file fn hideinitializer htmlinclude htmlonly if image include ingroup internal invariant interface latexonly li line link mainpage name namespace nosubgrouping note overload p page par param post pre ref relates remarks return retval sa section see showinitializer since skip skipline struct subsection test throw todo typedef union until var verbatim verbinclude version warning weakgroup $ @ \ & < > # { }
+
+keywordclass.ch=auto array bool break case char class complex ComplexInf ComplexNaN const continue default delete do double else enum export extern float for foreach goto if Inf inline int long namespace NaN new NULL private public register restrict return short signed sizeof static string_t struct switch this typedef union unsigned using void volatile wchar_t while __declspec 
+keywords.$(file.patterns.ch)=$(keywordclass.ch)
+
+keywordclass.cs=abstract as base bool break byte case catch char checked class const continue decimal default delegate do double else enum event explicit extern false finally fixed float for foreach goto if implicit in int interface internal is lock long namespace new null object operator out override params private protected public readonly ref return sbyte sealed short sizeof stackalloc static string struct switch this throw true try typeof uint ulong unchecked unsafe ushort using virtual void while
+keywords.$(file.patterns.cs)=$(keywordclass.cs)
+
+keywordclass.d=abstract alias align asm assert auto bit body break byte case cast catch cdouble cent cfloat char class const continue creal dchar debug default delegate delete deprecated do double else enum export extern false final finally float for foreach function goto idouble if ifloat import in inout int interface invariant ireal is long mixin module new null out override package pragma private protected public real return short static struct super switch synchronized template this throw true try typedef typeid typeof ubyte ucent uint ulong union unittest ushort version void volatile wchar while with
+keywords.$(file.patterns.d)=$(keywordclass.d)
+
+keywordclass.rc=ACCELERATORS ALT AUTO3STATE AUTOCHECKBOX AUTORADIOBUTTON BEGIN BITMAP BLOCK BUTTON CAPTION CHARACTERISTICS CHECKBOX CLASS COMBOBOX CONTROL CTEXT CURSOR DEFPUSHBUTTON DIALOG DIALOGEX DISCARDABLE EDITTEXT END EXSTYLE FONT GROUPBOX ICON LANGUAGE LISTBOX LTEXT MENU MENUEX MENUITEM MESSAGETABLE POPUP PUSHBUTTON RADIOBUTTON RCDATA RTEXT SCROLLBAR SEPARATOR SHIFT STATE3 STRINGTABLE STYLE TEXTINCLUDE VALUE VERSION VERSIONINFO VIRTKEY
+keywords.$(file.patterns.rc)=$(keywordclass.rc)
+
+keywordclass.idl=aggregatable allocate appobject arrays async async_uuid auto_handle bindable boolean broadcast byte byte_count call_as callback char coclass code comm_status const context_handle context_handle_noserialize context_handle_serialize control cpp_quote custom decode default defaultbind defaultcollelem defaultvalue defaultvtable dispinterface displaybind dllname double dual enable_allocate encode endpoint entry enum error_status_t explicit_handle fault_status first_is float handle_t heap helpcontext helpfile helpstring helpstringcontext helpstringdll hidden hyper id idempotent ignore iid_as iid_is immediatebind implicit_handle import importlib in include in_line int __int64 __int3264 interface last_is lcid length_is library licensed local long max_is maybe message methods midl_pragma midl_user_allocate midl_user_free min_is module ms_union ncacn_at_dsp ncacn_dnet_nsp ncacn_http ncacn_ip_tcp ncacn_nb_ipx ncacn_nb_nb ncacn_nb_tcp ncacn_np ncacn_spx ncacn_vns_spp ncadg_ip_udp ncadg_ipx ncadg_mq ncalrpc nocode nonbrowsable noncreatable nonextensible notify object odl oleautomation optimize optional out out_of_line pipe pointer_default pragma properties propget propput propputref ptr public range readonly ref represent_as requestedit restricted retval shape short signed size_is small source strict_context_handle string struct switch switch_is switch_type transmit_as typedef uidefault union unique unsigned user_marshal usesgetlasterror uuid v1_enum vararg version void wchar_t wire_marshal
+keywordclass.msidl=handle
+keywordclass.xpidl=attribute native noscript scriptable shared wstring inout
+keywords.$(file.patterns.idl)=$(keywordclass.idl) $(keywordclass.xpidl)
+
+keywordclass.scala=abstract case catch class def do else extends false final finally for forSome if implicit import lazy match new null object override package private protected return sealed super this throw trait try true type val var while with yield <- =>
+keywords.$(file.patterns.scala)=$(keywordclass.scala)
+
+keywordclass.java=abstract assert boolean break byte case catch char class const continue default do double else extends final finally float for future generic goto if implements import inner instanceof int interface long native new null outer package private protected public rest return short static super switch synchronized this throw throws transient try var void volatile while
+keywords.*.java=$(keywordclass.java)
+
+keywordclass.javascript=abstract boolean break byte case catch char class const continue debugger default delete do double else enum export extends final finally float for function goto if implements import in instanceof int interface long native new package private protected public return short static super switch synchronized this throw throws transient try typeof var void volatile while with
+keywords.*.js=$(keywordclass.javascript)
+
+keywordclass.flash=add and break case catch class continue default delete do dynamic else eq extends false finally for function ge get gt if implements import in instanceof interface intrinsic le lt ne new not null or private public return set static super switch this throw true try typeof undefined var void while with
+keywordclass2.flash=Array Arguments Accessibility Boolean Button Camera Color ContextMenu ContextMenuItem Date Error Function Key LoadVars LocalConnection Math Microphone Mouse MovieClip MovieClipLoader NetConnection NetStream Number Object PrintJob Selection SharedObject Sound Stage String StyleSheet System TextField TextFormat TextSnapshot Video Void XML XMLNode XMLSocket _accProps _focusrect _global _highquality _parent _quality _root _soundbuftime arguments asfunction call capabilities chr clearInterval duplicateMovieClip escape eval fscommand getProperty getTimer getURL getVersion gotoAndPlay gotoAndStop ifFrameLoaded Infinity -Infinity int isFinite isNaN length loadMovie loadMovieNum loadVariables loadVariablesNum maxscroll mbchr mblength mbord mbsubstring MMExecute NaN newline nextFrame nextScene on onClipEvent onUpdate ord parseFloat parseInt play prevFrame prevScene print printAsBitmap printAsBitmapNum printNum random removeMovieClip scroll set setInterval setProperty startDrag stop stopAllSounds stopDrag substring targetPath tellTarget toggleHighQuality trace unescape unloadMovie unLoadMovieNum updateAfterEvent
+
+keywords.$(file.patterns.flash)=$(keywordclass.flash)
+keywords2.$(file.patterns.flash)=$(keywordclass2.flash)
+
+#== C/C++-like languages
+
+# Default
+description.style.cpp.32=$(description.style.default)
+style.cpp.32=$(colour.default)
+# White space
+description.style.cpp.0=$(description.style.whitespace)
+style.cpp.0=$(colour.whitespace)
+# Comment: /* */.
+description.style.cpp.1=$(description.style.blockcomments) /* */
+style.cpp.1=$(colour.comment)
+# Line Comment: //.
+description.style.cpp.2=$(description.style.linecomments) //
+style.cpp.2=$(colour.comment)
+# Doc comment: block comments beginning with /** or /*!
+description.style.cpp.3=$(description.style.doccomments) beginning with /** or /*!
+style.cpp.3=$(colour.comment)
+# Number
+description.style.cpp.4=$(description.style.numbers)
+style.cpp.4=$(colour.number)
+# Keyword
+description.style.cpp.5=$(description.style.keywords)
+style.cpp.5=$(colour.keyword)
+# Double quoted string
+description.style.cpp.6=$(description.style.doublequotedstrings)
+style.cpp.6=$(colour.literalstring)
+# Single quoted string
+description.style.cpp.7=$(description.style.singlequotedstrings)
+style.cpp.7=$(colour.literalstring)
+# UUIDs (only in IDL)
+description.style.cpp.8=$(description.style.uuids) (only in IDL)
+style.cpp.8=$(colour.literalstring)
+# Preprocessor
+description.style.cpp.9=$(description.style.preprocessor)
+style.cpp.9=$(colour.preprocessor)
+# Operators
+description.style.cpp.10=$(description.style.operators)
+style.cpp.10=$(colour.operator)
+# Identifiers
+description.style.cpp.11=$(description.style.identifiers)
+style.cpp.11=$(colour.identifier)
+# End of line where string is not closed
+description.style.cpp.12=$(description.style.eolstringnotclosed)
+style.cpp.12=$(colour.default)
+# Verbatim strings for C#
+description.style.cpp.13=Verbatim strings for C#
+style.cpp.13=$(colour.literalstring)
+# Regular expressions for JavaScript
+description.style.cpp.14=Regular expressions for JavaScript
+style.cpp.14=$(colour.literalstring)
+# Doc Comment Line: line comments beginning with /// or //!.
+description.style.cpp.15=$(description.style.doccomments) beginning with /// or //!
+style.cpp.15=$(colour.comment)
+# Keywords2
+description.style.cpp.16=$(description.style.keywords2)
+style.cpp.16=$(colour.keyword)
+# Comment keyword
+description.style.cpp.17=$(description.style.commentkeyword)
+style.cpp.17=$(colour.comment)
+# Comment keyword error
+description.style.cpp.18=$(description.style.commentkeyworderror)
+style.cpp.18=$(colour.comment)
+
+#== Scala
+
+# Default
+description.style.scala.32=$(description.style.default)
+style.scala.32=$(colour.default)
+# White space
+description.style.scala.0=$(description.style.whitespace)
+style.scala.0=$(colour.whitespace)
+# Comment: /* */.
+description.style.scala.1=$(description.style.blockcomments) /* */
+style.scala.1=$(colour.comment)
+# Line Comment: //.
+description.style.scala.2=$(description.style.linecomments) //
+style.scala.2=$(colour.comment)
+# Doc comment: block comments beginning with /** or /*!
+description.style.scala.3=$(description.style.doccomments) beginning with /** or /*!
+style.scala.3=$(colour.comment)
+# Number
+description.style.scala.4=$(description.style.numbers)
+style.scala.4=$(colour.number)
+# Keyword
+description.style.scala.5=$(description.style.keywords)
+style.scala.5=$(colour.keyword)
+# Double quoted string
+description.style.scala.6=$(description.style.doublequotedstrings)
+style.scala.6=$(colour.literalstring)
+# Single quoted string
+description.style.scala.7=$(description.style.singlequotedstrings)
+style.scala.7=$(colour.literalstring)
+# Operators
+description.style.scala.10=$(description.style.operators)
+style.scala.10=$(colour.operator)
+# Identifiers
+description.style.scala.11=$(description.style.identifiers)
+style.scala.11=$(colour.identifier)
+# End of line where string is not closed
+description.style.scala.12=$(description.style.eolstringnotclosed)
+style.scala.12=$(colour.default)
+# Comment keyword
+description.style.scala.17=$(description.style.commentkeyword)
+style.scala.17=$(colour.comment)
+
+#== VB-like languages
+
+# BAS: Module, FRM: Form, CLS: Class Module, CTL: User Control
+# PAG: Property Page, DSR: Data Report, DOB: User Document
+file.patterns.vb=*.vb;*.bas;*.frm;*.cls;*.ctl;*.pag;*.dsr;*.dob
+# VBS: VBScript, DSM: Visual[ex. Dev] Studio macro
+file.patterns.wscript=*.vbs;*.dsm
+
+lexer.$(file.patterns.vb)=vb
+lexer.$(file.patterns.wscript)=vbscript
+
+# Keywords, operators, statements, data types and some words in .frm files
+keywordclass.vb6=addressof alias and as attribute base begin binary boolean byref byte byval call case compare const currency date decimal declare defbool defbyte defint deflng defcur defsng defdbl defdec defdate defstr defobj defvar dim do double each else elseif empty end enum eqv erase error event exit explicit false for friend function get gosub goto if imp implements in input integer is len let lib like load lock long loop lset me mid midb mod new next not nothing null object on option optional or paramarray preserve print private property public raiseevent randomize redim rem resume return rset seek select set single static step stop string sub then time to true type typeof unload until variant wend while with withevents xor
+
+# html.properties picks up VB keywords from keywordclass.vb
+keywordclass.vb=$(keywordclass.vb6)
+
+# Mostly system statements (files, registry, I/O...) that
+# I am not sure to include with the regular statements.
+keywordclass.vbotherstatements=appactivate beep chdir chdrive close filecopy get input kill line unlock mkdir name open print put reset rmdir savepicture savesetting seek sendkeys setattr width write
+
+# VBNet specific keywords
+keywordclass.vbnet=addhandler andalso as assembly auto catch cbool cbyte cchar cdate cdbl cdec char cint class clng cobj cshort csng cstr ctype default delegate finally gettype handles imports inherits interface mustinherit mustoverride mybase myclass namespace notinheritable notoverridable orelse overloads overridable overrides protected readonly removehandler shadows shared short structure synclock throw try unicode when writeonly
+
+keywords.$(file.patterns.vb)=$(keywordclass.vb6) $(keywordclass.vbnet)
+keywords.$(file.patterns.wscript)=$(keywordclass.vb6)
+
+keywords2.$(file.patterns.vb)=$(keywordclass.vbotherstatements)
+
+# Default
+description.style.vb.32=$(description.style.default)
+style.vb.32=$(colour.default)
+# White space
+description.style.vb.0=$(description.style.whitespace)
+style.vb.0=$(colour.whitespace)
+# Comment
+description.style.vb.1=$(description.style.comments)
+style.vb.1=$(colour.comment)
+# Number
+description.style.vb.2=$(description.style.numbers)
+style.vb.2=$(colour.number)
+# Keyword
+description.style.vb.3=$(description.style.keywords)
+style.vb.3=$(colour.keyword)
+# String
+description.style.vb.4=$(description.style.literalstrings)
+style.vb.4=$(colour.literalstring)
+# Preprocessor (directives)
+description.style.vb.5=$(description.style.preprocessor)
+style.vb.5=$(colour.preprocessor)
+# Operator
+description.style.vb.6=$(description.style.operators)
+style.vb.6=$(colour.operator)
+# Identifier
+description.style.vb.7=$(description.style.identifiers)
+style.vb.7=$(colour.identifier)
+# Date
+description.style.vb.8=Date
+style.vb.8=$(colour.default)
+# End of line where string is not closed
+description.style.vb.9=$(description.style.eolstringnotclosed)
+style.vb.9=$(colour.default)
+# Other keywords
+description.style.vb.10=<unused>
+style.vb.10=$(colour.keyword)
+description.style.vb.11=<unused>
+style.vb.11=$(colour.keyword)
+description.style.vb.12=<unused>
+style.vb.12=$(colour.keyword)
+
+# VBScript styles same as VB styles
+description.style.vbscript.32=$(description.style.vb.32)
+style.vbscript.32=$(style.vb.32)
+description.style.vbscript.0=$(description.style.vb.0)
+style.vbscript.0=$(style.vb.0)
+description.style.vbscript.1=$(description.style.vb.1)
+style.vbscript.1=$(style.vb.1)
+description.style.vbscript.2=$(description.style.vb.2)
+style.vbscript.2=$(style.vb.2)
+description.style.vbscript.3=$(description.style.vb.3)
+style.vbscript.3=$(style.vb.3)
+description.style.vbscript.4=$(description.style.vb.4)
+style.vbscript.4=$(style.vb.4)
+description.style.vbscript.5=$(description.style.vb.5)
+style.vbscript.5=$(style.vb.5)
+description.style.vbscript.6=$(description.style.vb.6)
+style.vbscript.6=$(style.vb.6)
+description.style.vbscript.7=$(description.style.vb.7)
+style.vbscript.7=$(style.vb.7)
+description.style.vbscript.8=$(description.style.vb.8)
+style.vbscript.8=$(style.vb.8)
+description.style.vbscript.9=$(description.style.vb.9)
+style.vbscript.9=$(style.vb.9)
+description.style.vbscript.10=$(description.style.vb.10)
+style.vbscript.10=$(style.vb.10)
+description.style.vbscript.11=$(description.style.vb.11)
+style.vbscript.11=$(style.vb.11)
+description.style.vbscript.12=$(description.style.vb.12)
+style.vbscript.12=$(style.vb.12)
+
+#== HTML/XML-like languages
+
+# tpl is X and Mail specific
+file.patterns.web=*.html;*.htm;*.asp;*.shtml;*.htd;*.ascx;*.master;*.aspx
+file.patterns.php=*.php3;*.phtml;*.php
+file.patterns.html=$(file.patterns.web);$(file.patterns.php);*.htt;*.cfm;*.tpl;*.hta
+file.patterns.vxml=*.vxml
+file.patterns.xml=*.xml;*.xsl;*.svg;*.xul;*.xsd;*.dtd;*.xslt;*.axl;*.xrc;*.rdf;*.vcproj;*.wxs;*.wxi;*.config;*.csproj
+file.patterns.docbook=*.docbook
+
+lexer.$(file.patterns.html)=hypertext
+lexer.$(file.patterns.vxml)=hypertext
+lexer.$(file.patterns.xml)=xml
+lexer.$(file.patterns.docbook)=hypertext
+
+# All hypertext elements and attributes must be listed in lower case
+hypertext.elements=a abbr acronym address applet area b base basefont bdo big blockquote body br button caption center cite code col colgroup dd del dfn dir div dl dt em fieldset font form frame frameset h1 h2 h3 h4 h5 h6 head hr html i iframe img input ins isindex kbd label legend li link map menu meta noframes noscript object ol optgroup option p param pre q s samp script select small span strike strong style sub sup table tbody td textarea tfoot th thead title tr tt u ul var xml xmlns
+hypertext.attributes=abbr accept-charset accept accesskey action align alink alt archive axis background bgcolor border cellpadding cellspacing char charoff charset checked cite class classid clear codebase codetype color cols colspan compact content coords data datafld dataformatas datapagesize datasrc datetime declare defer dir disabled enctype event face for frame frameborder headers height href hreflang hspace http-equiv id ismap label lang language leftmargin link longdesc marginwidth marginheight maxlength media method multiple name nohref noresize noshade nowrap object onblur onchange onclick ondblclick onfocus onkeydown onkeypress onkeyup onload onmousedown onmousemove onmouseover onmouseout onmouseup onreset onselect onsubmit onunload profile prompt readonly rel rev rows rowspan rules scheme scope selected shape size span src standby start style summary tabindex target text title topmargin type usemap valign value valuetype version vlink vspace width text password checkbox radio submit reset file hidden image
+keywordclass.hypertext=$(hypertext.elements) $(hypertext.attributes) public !doctype
+vxml.elements=assign audio block break catch choice clear disconnect else elseif emphasis enumerate error exit field filled form goto grammar help if initial link log menu meta noinput nomatch object option p paragraph param phoneme prompt property prosody record reprompt return s say-as script sentence subdialog submit throw transfer value var voice vxml
+vxml.attributes=accept age alphabet anchor application base beep bridge category charset classid cond connecttimeout content contour count dest destexpr dtmf dtmfterm duration enctype event eventexpr expr expritem fetchtimeout finalsilence gender http-equiv id level maxage maxstale maxtime message messageexpr method mime modal mode name namelist next nextitem ph pitch range rate scope size sizeexpr skiplist slot src srcexpr sub time timeexpr timeout transferaudio type value variant version volume xml:lang
+keywordclass.vxml=$(vxml.elements) $(vxml.attributes) public !doctype
+
+# List from http://www.php.net/manual/en/reserved.php
+# For a list with functions http://www.scintilla.org/SciTEExtras.html
+# All words should be lower case to ensure case insensitivity when comparing
+keywordclass.php=and array as bool boolean break case cfunction class const continue declare default die directory do double echo else elseif empty enddeclare endfor endforeach endif endswitch endwhile eval exit extends false float for foreach function global if include include_once int integer isset list new null object old_function or parent print real require require_once resource return static stdclass string switch true unset use var while xor __class__ __file__ __function__ __line__ __sleep __wakeup
+
+# Override keywordclass.php with another file if present
+import phpfunctions
+
+keywords.$(file.patterns.html)=$(keywordclass.hypertext)
+# JavaScript keywords are possible inside embedded Javascript
+keywords2.$(file.patterns.html)=$(keywordclass.javascript)
+# VBScript keywords are possible inside embedded VBScript
+keywords3.$(file.patterns.html)=$(keywordclass.vb)
+# Python keywords are possible inside embedded Python
+keywords4.$(file.patterns.html)=$(keywordclass.python)
+# PHP keywords are possible inside embedded PHP
+keywords5.$(file.patterns.html)=$(keywordclass.php)
+# SGML / DTD keywords
+keywords6.$(file.patterns.html)=ELEMENT DOCTYPE ATTLIST ENTITY NOTATION
+
+# START DocBook
+docbook.elements42=abbrev abstract accel ackno acronym action address affiliation alt anchor answer appendix appendixinfo application area areaset areaspec arg article articleinfo artpagenums attribution audiodata audioobject author authorblurb authorgroup authorinitials beginpage bibliocoverage bibliodiv biblioentry bibliography bibliographyinfo biblioid bibliomisc bibliomixed bibliomset bibliorelation biblioset bibliosource blockinfo blockquote book bookinfo bridgehead callout calloutlist caption caution chapter chapterinfo citation citebiblioid citerefentry citetitle city classname classsynopsis classsynopsisinfo cmdsynopsis co collab collabname colophon colspec command computeroutput confdates confgroup confnum confsponsor conftitle constant constraint constraintdef constructorsynopsis contractnum contractsponsor contrib copyright coref corpauthor corpname country database date dedication destructorsynopsis edition editor email emphasis entry entrytbl envar epigraph equation errorcode errorname errortext errortype example exceptionname fax fieldsynopsis figure filename firstname firstterm footnote footnoteref foreignphrase formalpara funcdef funcparams funcprototype funcsynopsis funcsynopsisinfo function glossary glossaryinfo glossdef glossdiv glossentry glosslist glosssee glossseealso glossterm graphic graphicco group guibutton guiicon guilabel guimenu guimenuitem guisubmenu hardware highlights holder honorific htm imagedata imageobject imageobjectco important index indexdiv indexentry indexinfo indexterm informalequation informalexample informalfigure informaltable initializer inlineequation inlinegraphic inlinemediaobject interface interfacename invpartnumber isbn issn issuenum itemizedlist itermset jobtitle keycap keycode keycombo keysym keyword keywordset label legalnotice lhs lineage lineannotation link listitem iteral literallayout lot lotentry manvolnum markup medialabel mediaobject mediaobjectco member menuchoice methodname methodparam methodsynopsis mm modespec modifier ousebutton msg msgaud msgentry msgexplan msginfo msglevel msgmain msgorig msgrel msgset msgsub msgtext nonterminal note objectinfo olink ooclass ooexception oointerface option optional orderedlist orgdiv orgname otheraddr othercredit othername pagenums para paramdef parameter part partinfo partintro personblurb personname phone phrase pob postcode preface prefaceinfo primary primaryie printhistory procedure production productionrecap productionset productname productnumber programlisting programlistingco prompt property pubdate publisher publishername pubsnumber qandadiv qandaentry qandaset question quote refclass refdescriptor refentry refentryinfo refentrytitle reference referenceinfo refmeta refmiscinfo refname refnamediv refpurpose refsect1 refsect1info refsect2 refsect2info refsect3 refsect3info refsection refsectioninfo refsynopsisdiv refsynopsisdivinfo releaseinfo remark replaceable returnvalue revdescription revhistory revision revnumber revremark rhs row sbr screen screenco screeninfo screenshot secondary secondaryie sect1 sect1info sect2 sect2info sect3 sect3info sect4 sect4info sect5 sect5info section sectioninfo see seealso seealsoie seeie seg seglistitem segmentedlist segtitle seriesvolnums set setindex setindexinfo setinfo sgmltag shortaffil shortcut sidebar sidebarinfo simpara simplelist simplemsgentry simplesect spanspec state step street structfield structname subject subjectset subjectterm subscript substeps subtitle superscript surname sv symbol synopfragment synopfragmentref synopsis systemitem table tbody term tertiary tertiaryie textdata textobject tfoot tgroup thead tip title titleabbrev toc tocback tocchap tocentry tocfront toclevel1 toclevel2 toclevel3 toclevel4 toclevel5 tocpart token trademark type ulink userinput varargs variablelist varlistentry varname videodata videoobject void volumenum warning wordasword xref year
+docbook.attributes=arch condition conformance id lang os remap role revision revisionflag security userlevel vendor xreflabel status label endterm linkend space width
+keywordclass.docbook=$(docbook.elements42) $(docbook.attributes)
+keywords.$(file.patterns.docbook)=$(keywordclass.docbook)
+keywords6.$(file.patterns.docbook)=ELEMENT DOCTYPE ATTLIST ENTITY NOTATION
+# END DocBook
+
+# No keyword for xml, as it accepts any keyword
+keywords.$(file.patterns.xml)=
+# SGML / DTD keywords
+keywords6.$(file.patterns.xml)=ELEMENT DOCTYPE ATTLIST ENTITY NOTATION
+keywords.$(file.patterns.vxml)=$(keywordclass.vxml)
+keywords2.$(file.patterns.vxml)=$(keywordclass.javascript)
+
+# HTML and XML share lexing code so use the same style numbers
+# Hypertext Markup Language
+
+# Text
+description.style.hypertext.0=$(description.style.default)
+style.hypertext.0=$(colour.default)
+# Tags
+description.style.hypertext.1=Tags
+style.hypertext.1=$(colour.element)
+# Unknown Tags
+description.style.hypertext.2=Unknown Tags
+style.hypertext.2=$(colour.element)
+# Attributes
+description.style.hypertext.3=Attributes
+style.hypertext.3=$(colour.keyword)
+# Unknown Attributes
+description.style.hypertext.4=Unknown Attributes
+style.hypertext.4=$(colour.keyword)
+# Numbers
+description.style.hypertext.5=$(description.style.numbers)
+style.hypertext.5=$(colour.number)
+# Double quoted strings
+description.style.hypertext.6=$(description.style.doublequotedstrings)
+style.hypertext.6=$(colour.literalstring)
+# Single quoted strings
+description.style.hypertext.7=$(description.style.singlequotedstrings)
+style.hypertext.7=$(colour.literalstring)
+# Other inside tag
+description.style.hypertext.8=Other inside tag
+style.hypertext.8=$(colour.element)
+# Comment
+description.style.hypertext.9=$(description.style.comments)
+style.hypertext.9=$(colour.comment)
+# Entities
+description.style.hypertext.10=Entities
+style.hypertext.10=$(colour.entity)
+# XML style tag ends '/>'
+description.style.hypertext.11=XML style tag ends '/>'
+style.hypertext.11=$(colour.directive)
+# XML identifier start '<?'
+description.style.hypertext.12=XML identifier start '<?'
+style.hypertext.12=$(colour.directive)
+# XML identifier end '?>'
+description.style.hypertext.13=XML identifier end '?>'
+style.hypertext.13=$(colour.directive)
+#  SCRIPT
+description.style.hypertext.14=SCRIPT
+style.hypertext.14=$(colour.keyword)
+# ASP <% ... %>
+description.style.hypertext.15=ASP <% ... %>
+style.hypertext.15=$(colour.directive)
+# ASP <% ... %> 2
+description.style.hypertext.16=ASP <% ... %> 2
+style.hypertext.16=$(colour.directive)
+# CDATA
+description.style.hypertext.17=CDATA
+style.hypertext.17=$(colour.directive)
+# PHP
+description.style.hypertext.18=PHP
+style.hypertext.18=$(colour.element)
+# Unquoted values
+description.style.hypertext.19=Unquoted values
+style.hypertext.19=$(colour.value)
+# JSP Comment <%-- ... --%>
+description.style.hypertext.20=JSP Comment <%-- ... --%>
+style.hypertext.20=$(colour.comment)
+# SGML tags <! ... >
+description.style.hypertext.21=SGML tags <! ... >
+style.hypertext.21=$(colour.directive)
+# SGML command
+description.style.hypertext.22=SGML command
+style.hypertext.22=$(colour.keyword)
+# SGML 1st param
+description.style.hypertext.23=SGML 1st param
+style.hypertext.23=$(colour.identifier)
+# SGML double string
+description.style.hypertext.24=SGML double string
+style.hypertext.24=$(colour.literalstring)
+# SGML single string
+description.style.hypertext.25=SGML single string
+style.hypertext.25=$(colour.literalstring)
+# SGML error
+description.style.hypertext.26=SGML error
+style.hypertext.26=$(colour.error)
+# SGML special (#xxxx type)
+description.style.hypertext.27=SGML special (#xxxx type)
+style.hypertext.27=$(colour.entity)
+# SGML entity
+description.style.hypertext.28=SGML entity
+style.hypertext.28=$(colour.entity)
+# SGML comment
+description.style.hypertext.29=SGML comment
+style.hypertext.29=$(colour.comment)
+# SGML block
+description.style.hypertext.31=SGML block
+style.hypertext.31=$(colour.default)
+# Some reasonable background colours found in the default Windows palette
+# Off White #FFFBF0    Light green #C0DCC0    Light Blue #A6CAF0
+# Matched Operators
+description.style.hypertext.34=Matched Operators
+style.hypertext.34=$(colour.operator)
+description.style.hypertext.35=Matched Operators 2
+style.hypertext.35=$(colour.operator)
+
+# Embedded Javascript
+fontcolour.js=$(colour.default)
+# JS Start 2 - allows eol filled background to not start on same line as SCRIPT tag
+description.style.hypertext.40=JS Start 2
+style.hypertext.40=$(colour.default)
+# JS Default 2
+description.style.hypertext.41=JS $(description.style.default) 2
+style.hypertext.41=$(colour.default)
+# JS Comment 2
+description.style.hypertext.42=JS $(description.style.comments) 2
+style.hypertext.42=$(colour.comment)
+# JS Line Comment 2
+description.style.hypertext.43=JS $(description.style.linecomments) 2
+style.hypertext.43=$(colour.comment)
+# JS Doc comment 2
+description.style.hypertext.44=JS $(description.style.doccomments) 2
+style.hypertext.44=$(colour.comment)
+# JS Number 2
+description.style.hypertext.45=JS $(description.style.numbers) 2
+style.hypertext.45=$(colour.number)
+# JS Word 2
+description.style.hypertext.46=JS Word 2
+style.hypertext.46=$(colour.default)
+# JS Keyword 2
+description.style.hypertext.47=JS $(description.style.keywords) 2
+style.hypertext.47=$(colour.keyword)
+# JS Double quoted string 2
+description.style.hypertext.48=JS $(description.style.doublequotedstrings) 2
+style.hypertext.48=$(colour.literalstring)
+# JS Single quoted string 2
+description.style.hypertext.49=JS $(description.style.singlequotedstrings) 2
+style.hypertext.49=$(colour.literalstring)
+# JS Symbols 2
+description.style.hypertext.50=JS $(description.style.symbols) 2
+style.hypertext.50=$(colour.entity)
+# JavaScript EOL
+description.style.hypertext.51=JavaScript EOL
+style.hypertext.51=$(colour.default)
+# JavaScript RegEx
+description.style.hypertext.52=JavaScript RegEx
+style.hypertext.52=$(colour.literalstring)
+
+# ASP Javascript
+# JS Start - allows eol filled background to not start on same line as SCRIPT tag
+description.style.hypertext.55=JS Start
+style.hypertext.55=$(colour.default)
+# JS Default
+description.style.hypertext.56=JS $(description.style.default)
+style.hypertext.56=$(colour.default)
+# JS Comment
+description.style.hypertext.57=JS $(description.style.comments)
+style.hypertext.57=$(colour.comment)
+# JS Line Comment
+description.style.hypertext.58=JS $(description.style.linecomments)
+style.hypertext.58=$(colour.comment)
+# JS Doc comment
+description.style.hypertext.59=JS $(description.style.doccomments)
+style.hypertext.59=$(colour.comment)
+# JS Number
+description.style.hypertext.60=JS $(description.style.numbers)
+style.hypertext.60=$(colour.number)
+# JS Word
+description.style.hypertext.61=JS Word
+style.hypertext.61=$(colour.default)
+# JS Keyword
+description.style.hypertext.62=JS $(description.style.keywords)
+style.hypertext.62=$(colour.keyword)
+# JS Double quoted string
+description.style.hypertext.63=JS $(description.style.doublequotedstrings)
+style.hypertext.63=$(colour.literalstring)
+# JS Single quoted string
+description.style.hypertext.64=JS $(description.style.singlequotedstrings)
+style.hypertext.64=$(colour.literalstring)
+# JS Symbols
+description.style.hypertext.65=JS $(description.style.symbols)
+style.hypertext.65=$(colour.entity)
+# JavaScript EOL 2
+description.style.hypertext.66=JavaScript EOL 2
+style.hypertext.66=$(colour.default)
+# JavaScript RegEx 2
+description.style.hypertext.67=JavaScript RegEx 2
+style.hypertext.67=$(colour.literalstring)
+
+# Embedded VBS
+# Start
+description.style.hypertext.70=Embedded VBS Start
+style.hypertext.70=$(colour.default)
+# Default
+description.style.hypertext.71=Embedded VBS $(description.style.default)
+style.hypertext.71=$(colour.default)
+# Comment
+description.style.hypertext.72=Embedded VBS $(description.style.comments)
+style.hypertext.72=$(colour.comment)
+# Number
+description.style.hypertext.73=Embedded VBS $(description.style.numbers)
+style.hypertext.73=$(colour.number)
+# KeyWord
+description.style.hypertext.74=Embedded VBS $(description.style.keywords)
+style.hypertext.74=$(colour.keyword)
+# String
+description.style.hypertext.75=Embedded VBS $(description.style.strings)
+style.hypertext.75=$(colour.literalstring)
+# Identifier
+description.style.hypertext.76=Embedded VBS $(description.style.identifiers)
+style.hypertext.76=$(colour.identifier)
+# Unterminated string
+description.style.hypertext.77=Embedded VBS Unterminated string
+style.hypertext.77=$(colour.literalstring)
+
+# ASP VBS
+# Start
+description.style.hypertext.80=ASP VBS Start
+style.hypertext.80=$(colour.default)
+# Default
+description.style.hypertext.81=ASP VBS $(description.style.default)
+style.hypertext.81=$(colour.default)
+# Comment
+description.style.hypertext.82=ASP VBS $(description.style.comments)
+style.hypertext.82=$(colour.comment)
+# Number
+description.style.hypertext.83=ASP VBS $(description.style.numbers)
+style.hypertext.83=$(colour.number)
+# KeyWord
+description.style.hypertext.84=ASP VBS $(description.style.keywords)
+style.hypertext.84=$(colour.keyword)
+# String
+description.style.hypertext.85=ASP VBS $(description.style.strings)
+style.hypertext.85=$(colour.literalstring)
+# Identifier
+description.style.hypertext.86=ASP VBS $(description.style.identifiers)
+style.hypertext.86=$(colour.identifier)
+# Unterminated string
+description.style.hypertext.87=ASP VBS Unterminated string
+style.hypertext.87=$(colour.literalstring)
+
+# Embedded Python
+description.style.hypertext.90=Embedded Python
+style.hypertext.90=$(colour.default)
+description.style.hypertext.91=Embedded Python 2
+style.hypertext.91=$(colour.default)
+# Comment
+description.style.hypertext.92=Embedded Python $(description.style.comments)
+style.hypertext.92=$(colour.comment)
+# Number
+description.style.hypertext.93=Embedded Python $(description.style.numbers)
+style.hypertext.93=$(colour.number)
+# String
+description.style.hypertext.94=Embedded Python $(description.style.strings)
+style.hypertext.94=$(colour.literalstring)
+# Single quoted string
+description.style.hypertext.95=Embedded Python $(description.style.singlequotedstrings)
+style.hypertext.95=$(colour.literalstring)
+# Keyword
+description.style.hypertext.96=Embedded Python $(description.style.keywords)
+style.hypertext.96=$(colour.keyword)
+# Triple quotes
+description.style.hypertext.97=Embedded Python Triple quotes
+style.hypertext.97=$(colour.default)
+# Triple double quotes
+description.style.hypertext.98=Embedded Python Triple double quotes
+style.hypertext.98=$(colour.default)
+# Class name definition
+description.style.hypertext.99=Embedded Python Class name definition
+style.hypertext.99=$(colour.identifier)
+# Function or method name definition
+description.style.hypertext.100=Embedded Python Function or method name definition
+style.hypertext.100=$(colour.identifier)
+# Operators
+description.style.hypertext.101=Embedded Python $(description.style.operators)
+style.hypertext.101=$(colour.operator)
+# Identifiers
+description.style.hypertext.102=Embedded Python $(description.style.identifiers)
+style.hypertext.102=$(colour.identifier)
+
+# PHP complex variable
+description.style.hypertext.104=PHP complex variable
+style.hypertext.104=$(colour.identifier)
+
+# ASP Python
+description.style.hypertext.105=ASP Python $(description.style.default)
+style.hypertext.105=$(colour.default)
+description.style.hypertext.106=ASP Python $(description.style.default) 2
+style.hypertext.106=$(colour.default)
+# Comment
+description.style.hypertext.107=ASP Python $(description.style.comments)
+style.hypertext.107=$(colour.comment)
+# Number
+description.style.hypertext.108=ASP Python $(description.style.numbers)
+style.hypertext.108=$(colour.number)
+# String
+description.style.hypertext.109=ASP Python $(description.style.strings)
+style.hypertext.109=$(colour.literalstring)
+# Single quoted string
+description.style.hypertext.110=ASP Python $(description.style.singlequotedstrings)
+style.hypertext.110=$(colour.literalstring)
+# Keyword
+description.style.hypertext.111=ASP Python $(description.style.keywords)
+style.hypertext.111=$(colour.keyword)
+# Triple quotes
+description.style.hypertext.112=ASP Python Triple quotes
+style.hypertext.112=$(colour.literalstring)
+# Triple double quotes
+description.style.hypertext.113=ASP Python Triple double quotes
+style.hypertext.113=$(colour.literalstring)
+# Class name definition
+description.style.hypertext.114=ASP Python Class name definition
+style.hypertext.114=$(colour.keyword)
+# Function or method name definition
+description.style.hypertext.115=ASP Python Function or method name definition
+style.hypertext.115=$(colour.identifier)
+# Operators
+description.style.hypertext.116=ASP Python $(description.style.operators)
+style.hypertext.116=$(colour.operator)
+# Identifiers
+description.style.hypertext.117=ASP Python $(description.style.identifiers)
+style.hypertext.117=$(colour.identifier)
+
+# PHP
+# Default
+description.style.hypertext.118=PHP $(description.style.default)
+style.hypertext.118=$(colour.default)
+# Double quoted String
+description.style.hypertext.119=PHP $(description.style.doublequotedstrings)
+style.hypertext.119=$(colour.literalstring)
+# Single quoted string
+description.style.hypertext.120=PHP $(description.style.singlequotedstrings)
+style.hypertext.120=$(colour.literalstring)
+# Keyword
+description.style.hypertext.121=PHP $(description.style.keywords)
+style.hypertext.121=$(colour.keyword)
+# Number
+description.style.hypertext.122=PHP $(description.style.numbers)
+style.hypertext.122=$(colour.number)
+# Variable
+description.style.hypertext.123=PHP Variable
+style.hypertext.123=$(colour.variable)
+# Comment
+description.style.hypertext.124=PHP $(description.style.comments)
+style.hypertext.124=$(colour.comment)
+# One line comment
+description.style.hypertext.125=PHP $(description.style.linecomments)
+style.hypertext.125=$(colour.comment)
+# PHP variable in double quoted string
+description.style.hypertext.126=PHP variable in $(description.style.doublequotedstrings)
+style.hypertext.126=$(colour.variable)
+# PHP operator
+description.style.hypertext.127=PHP $(description.style.operators)
+style.hypertext.127=$(colour.operator)
+
+# XML: eXtensible Markup Language
+# For XML, there is no list of known tags or attributes so all are coloured known
+
+# Default
+description.style.xml.0=$(description.style.default)
+style.xml.0=$(colour.default)
+# Tags
+description.style.xml.1=Tags
+style.xml.1=$(colour.element)
+# Unknown Tags
+description.style.xml.2=Unknown Tags
+style.xml.2=$(colour.element)
+# Attributes
+description.style.xml.3=Attributes
+style.xml.3=$(colour.keyword)
+# Unknown Attributes
+description.style.xml.4=Unknown Attributes
+style.xml.4=$(colour.keyword)
+# Numbers
+description.style.xml.5=$(description.style.numbers)
+style.xml.5=$(colour.number)
+# Double quoted strings
+description.style.xml.6=$(description.style.doublequotedstrings)
+style.xml.6=$(colour.literalstring)
+# Single quoted strings
+description.style.xml.7=$(description.style.singlequotedstrings)
+style.xml.7=$(colour.literalstring)
+# Other inside tag
+description.style.xml.8=Other inside tag
+style.xml.8=$(colour.element)
+# Comment
+description.style.xml.9=$(description.style.comments)
+style.xml.9=$(colour.comment)
+# Entities
+description.style.xml.10=Entities
+style.xml.10=$(colour.entity)
+# XML style tag ends '/>'
+description.style.xml.11=XML style tag ends '/>'
+style.xml.11=$(colour.directive)
+# XML identifier start '<?'
+description.style.xml.12=XML identifier start '<?'
+style.xml.12=$(colour.directive)
+# XML identifier end '?>'
+description.style.xml.13=XML identifier end '?>'
+style.xml.13=$(colour.directive)
+# CDATA
+description.style.xml.17=CDATA
+style.xml.17=$(colour.directive)
+# Question
+description.style.xml.18=Question
+style.xml.18=$(colour.keyword)
+# Unquoted Value
+description.style.xml.19=Unquoted Value
+style.xml.19=$(colour.literalstring)
+# SGML tags <! ... >
+description.style.xml.21=SGML tags <! ... >
+style.xml.21=$(colour.directive)
+# SGML command
+description.style.xml.22=SGML command
+style.xml.22=$(colour.keyword)
+# SGML 1st param
+description.style.xml.23=SGML 1st param
+style.xml.23=$(colour.identifier)
+# SGML double string
+description.style.xml.24=SGML double string
+style.xml.24=$(colour.literalstring)
+# SGML single string
+description.style.xml.25=SGML single string
+style.xml.25=$(colour.literalstring)
+# SGML error
+description.style.xml.26=SGML error
+style.xml.26=$(colour.error)
+# SGML special (#xxxx type)
+description.style.xml.27=SGML special (#xxxx type)
+style.xml.27=$(colour.entity)
+# SGML entity
+description.style.xml.28=SGML entity
+style.xml.28=$(colour.entity)
+# SGML comment
+description.style.xml.29=SGML comment
+style.xml.29=$(colour.comment)
+# SGML block
+description.style.xml.31=SGML block
+style.xml.31=$(colour.default)
+
+#== Caml
+
+# OCaml implementation and interface files
+file.patterns.caml=*.caml;*.ml;*.mli;*.fs;*.fsi
+
+lexer.$(file.patterns.caml)=caml
+
+# the standard Objective Caml 3.09 language "textual" keywords
+keywordstandard.caml=and as assert asr begin class constraint do done downto else end exception external false for fun function functor if in include inherit initializer land lazy let lor lsl lsr lxor match method mod module mutable new object of open or private rec sig struct then to true try type val virtual when while with
+keywords.$(file.patterns.caml)=$(keywordstandard.caml)
+
+# "optional" Objective Caml / library keywords; some suggested entries are here,
+# more could come from, say, Pervasives
+keywordoptional1.caml=option Some None ignore ref lnot succ pred
+keywords2.$(file.patterns.caml)=$(keywordoptional1.caml)
+
+# "optional" Objective Caml / library keywords; some suggested entries are here,
+# more could come from, say, user-defined types
+keywordoptional2.caml=array bool char float int list string unit
+keywords3.$(file.patterns.caml)=$(keywordoptional2.caml)
+
+# "Out-of-the-box" syntax colors are defined here - I like having
+# my literals (number, char, and string), tag-names, and "optional"
+# keywords stand out - you might not, so adjust accordingly!
+# Default
+description.style.caml.32=$(description.style.default)
+style.caml.32=$(colour.default)
+# White space
+description.style.caml.0=$(description.style.whitespace)
+style.caml.0=$(colour.whitespace)
+# Identifiers
+description.style.caml.1=$(description.style.identifiers)
+style.caml.1=$(colour.identifier)
+# Tag-names
+description.style.caml.2=Tag-names
+style.caml.2=$(colour.default)
+# Keywords (builtin language-defined keywords)
+description.style.caml.3=$(description.style.keywords) (builtin language-defined keywords)
+style.caml.3=$(colour.keyword)
+# Keywords2 (season to taste - use for option, Some, None, etc)
+description.style.caml.4=$(description.style.keywords2) (option, Some, None, etc.)
+style.caml.4=$(colour.keyword2)
+# Keywords3 (season to taste - use for bool, char, float, etc)
+description.style.caml.5=$(description.style.keywords3) (use for bool, char, float, etc.)
+style.caml.5=$(colour.keyword3)
+# Linenum directive
+description.style.caml.6=Linenum directive
+style.caml.6=$(colour.preprocessor)
+# Operators
+description.style.caml.7=$(description.style.operators)
+style.caml.7=$(colour.operator)
+# Number
+description.style.caml.8=$(description.style.numbers)
+style.caml.8=$(colour.number)
+# Single quoted string (character constant)
+description.style.caml.9=$(description.style.singlequotedstrings) (character constant)
+style.caml.9=$(colour.literalstring)
+# Double quoted string (string constant)
+description.style.caml.11=$(description.style.doublequotedstrings) (string constant)
+style.caml.11=$(colour.literalstring)
+# Comment (NOT nested)
+description.style.caml.12=$(description.style.comments) (NOT nested)
+style.caml.12=$(colour.comment)
+# Comment (SINGLY nested)
+description.style.caml.13=$(description.style.comments) (SINGLY nested)
+style.caml.13=$(colour.comment)
+# Comment (DOUBLY nested)
+description.style.caml.14=$(description.style.comments) (DOUBLY nested)
+style.caml.14=$(colour.comment)
+# Comment (TRIPLY nested)
+description.style.caml.15=$(description.style.comments) (TRIPLY nested)
+style.caml.15=$(colour.comment)
+
+#== CSS
+
+lexer.*.css=css
+
+keywordclass.css=color background-color background-image background-repeat background-attachment background-position background font-family font-style font-variant font-weight font-size font word-spacing letter-spacing text-decoration vertical-align text-transform text-align text-indent line-height margin-top margin-right margin-bottom margin-left margin padding-top padding-right padding-bottom padding-left padding border-top-width border-right-width border-bottom-width border-left-width border-width border-top border-right border-bottom border-left border border-color border-style width height float clear display white-space list-style-type list-style-image list-style-position list-style
+keywordclass.values=auto none normal italic oblique small-caps bold bolder lighter xx-small x-small small medium large x-large xx-large larger smaller transparent repeat repeat-x repeat-y no-repeat scroll fixed top bottom left center right justify both underline overline line-through blink baseline sub super text-top middle text-bottom capitalize uppercase lowercase thin medium thick dotted dashed solid double groove ridge inset outset block inline list-item pre no-wrap inside outside disc circle square decimal lower-roman upper-roman lower-alpha upper-alpha aqua black blue fuchsia gray green lime maroon navy olive purple red silver teal white yellow
+keywordclass.css2=border-top-color border-right-color border-bottom-color border-left-color border-color border-top-style border-right-style border-bottom-style border-left-style border-style top right bottom left position z-index direction unicode-bidi min-width max-width min-height max-height overflow clip visibility content quotes counter-reset counter-increment marker-offset size marks page-break-before page-break-after page-break-inside page orphans widows font-stretch font-size-adjust unicode-range units-per-em src panose-1 stemv stemh slope cap-height x-height ascent descent widths bbox definition-src baseline centerline mathline topline text-shadow caption-side table-layout border-collapse border-spacing empty-cells speak-header cursor outline outline-width outline-style outline-color volume speak pause-before pause-after pause cue-before cue-after cue play-during azimuth elevation speech-rate voice-family pitch pitch-range stress richness speak-punctuation speak-numeral
+keywordclass.values2=inherit run-in compact marker table inline-table table-row-group table-header-group table-footer-group table-row table-column-group table-column table-cell table-caption static relative absolute fixed ltr rtl embed bidi-override visible hidden scroll collapse open-quote close-quote no-open-quote no-close-quote decimal-leading-zero lower-greek lower-latin upper-latin hebrew armenian georgian cjk-ideographic hiragana katakana hiragana-iroha katakana-iroha landscape portrait crop cross always avoid wider narrower ultra-condensed extra-condensed condensed semi-condensed semi-expanded expanded extra-expanded ultra-expanded caption icon menu message-box small-caption status-bar separate show hide once crosshair default pointer move text wait help e-resize ne-resize nw-resize n-resize se-resize sw-resize s-resize w-resize ActiveBorder ActiveCaption AppWorkspace Background ButtonFace ButtonHighlight ButtonShadow InactiveCaptionText ButtonText CaptionText GrayText Highlight HighlightText InactiveBorder InactiveCaption InfoBackground InfoText Menu MenuText Scrollbar ThreeDDarkShadow ThreeDFace ThreeDHighlight ThreeDLightShadow ThreeDShadow Window WindowFrame WindowText silent x-soft soft medium loud x-loud spell-out mix left-side far-left center-left center-right far-right right-side behind leftwards rightwards below level above higher lower x-slow slow medium fast x-fast faster slower male female child x-low low high x-high code digits continous
+
+keywords.*.css=$(keywordclass.css)
+
+# Pseudo classes
+keywords2.*.css=first-letter first-line link active visited first-child focus hover lang before after left right first
+# Second line is CSS2
+keywords3.*.css=$(keywordclass.css2)
+
+# Default
+description.style.css.32=$(description.style.default)
+style.css.32=$(colour.default)
+# White space: Visible only in View Whitespace mode (or if it has a back colour)
+description.style.css.0=$(description.style.whitespace): Visible only in View Whitespace mode (or if it has a back colour)
+style.css.0=$(colour.default)
+# Selector (HTML tag)
+description.style.css.1=Selector (HTML tag)
+style.css.1=$(colour.element)
+# Class selector ([HtmlTag].classSelector)
+description.style.css.2=Class selector ([HtmlTag].classSelector)
+style.css.2=$(colour.keyword)
+# Pseudo class (HtmlTag:pseudoClass)
+description.style.css.3=Pseudo class (HtmlTag:pseudoClass)
+style.css.3=$(colour.keyword)
+# Unknown Pseudo class
+description.style.css.4=Unknown Pseudo class
+style.css.4=$(colour.keyword)
+# Operator
+description.style.css.5=$(description.style.operators)
+style.css.5=$(colour.operator)
+# CSS1 Property
+description.style.css.6=CSS1 Property
+style.css.6=$(colour.identifier)
+# Unknown Property
+description.style.css.7=Unknown Property
+style.css.7=$(colour.identifier)
+# Value
+description.style.css.8=Value
+style.css.8=$(colour.literalstring)
+# Comment
+description.style.css.9=$(description.style.comments)
+style.css.9=$(colour.comment)
+# ID selector (#IdSel)
+description.style.css.10=ID selector (#IdSel)
+style.css.10=$(colour.number)
+# Important
+description.style.css.11=Important
+style.css.11=$(colour.identifier2)
+# At-rule (@)
+description.style.css.12=At-rule (@)
+style.css.12=$(colour.preprocessor)
+# Double quoted strings
+description.style.css.13=$(description.style.doublequotedstrings)
+style.css.13=$(colour.literalstring)
+# Single quoted strings
+description.style.css.14=$(description.style.singlequotedstrings)
+style.css.14=$(colour.literalstring)
+# CSS2 Property
+description.style.css.15=CSS2 Property
+style.css.15=$(colour.identifier)
+# Attribute selection ([att='val'])
+description.style.css.16=Attribute selection ([att='val'])
+style.css.16=$(colour.keyword)
+
+#== Erlang
+
+file.patterns.erlang=*.erl;*.hrl
+lexer.$(file.patterns.erlang)=erlang
+
+keywordclass.erlang=after begin case catch cond end fun if let of query receive when define record export import include include_lib ifdef ifndef else endif undef apply attribute call do in letrec module primop try
+keywords.$(file.patterns.erlang)=$(keywordclass.erlang)
+
+# Erlang styles
+# White space
+description.style.erlang.0=$(description.style.whitespace)
+style.erlang.0=$(colour.default)
+# Comment
+description.style.erlang.1=$(description.style.comments)
+style.erlang.1=$(colour.comment)
+# Variable
+description.style.erlang.2=$(description.style.variables)
+style.erlang.2=$(colour.variable)
+# Number
+description.style.erlang.3=$(description.style.numbers)
+style.erlang.3=$(colour.number)
+# Keyword
+description.style.erlang.4=$(description.style.keywords)
+style.erlang.4=$(colour.keyword)
+# String
+description.style.erlang.5=$(description.style.literalstrings)
+style.erlang.5=$(colour.literalstring)
+# Operator
+description.style.erlang.6=$(description.style.operators)
+style.erlang.6=$(colour.operator)
+# Atom
+description.style.erlang.7=Atom
+style.erlang.7=$(colour.identifier2)
+# function name
+description.style.erlang.8=Function name
+style.erlang.8=$(colour.identifier)
+# Character
+description.style.erlang.9=$(description.style.characters)
+style.erlang.9=$(colour.literalstring)
+# Macro
+description.style.erlang.10=Macro
+style.erlang.10=$(colour.preprocessor)
+# Record
+description.style.erlang.11=Record
+style.erlang.11=$(colour.identifier2)
+# Separator
+description.style.erlang.12=Separator
+style.erlang.12=$(colour.default)
+# Node name
+description.style.erlang.13=Node name
+style.erlang.13=$(colour.identifier3)
+# parse error
+description.style.erlang.31=Parse error
+style.erlang.31=$(colour.error)
+
+#== Fortran
+
+file.patterns.f95=*.f90;*.f95;*.f2k
+file.patterns.f77=*.f;*.for
+file.patterns.fortran=$(file.patterns.f95);$(file.patterns.f77)
+
+lexer.$(file.patterns.f95)=fortran
+lexer.$(file.patterns.f77)=f77
+
+# keywords and input/output specifiers
+keywordclass.fortran=access action advance allocatable allocate apostrophe assign assignment associate asynchronous backspace bind blank blockdata call case character class close common complex contains continue cycle data deallocate decimal delim default dimension direct do dowhile double doubleprecision else elseif elsewhere encoding end endassociate endblockdata enddo endfile endforall endfunction endif endinterface endmodule endprogram endselect endsubroutine endtype endwhere entry eor equivalence err errmsg exist exit external file flush fmt forall form format formatted function go goto id if implicit in include inout integer inquire intent interface intrinsic iomsg iolength iostat kind len logical module name named namelist nextrec nml none nullify number only open opened operator optional out pad parameter pass pause pending pointer pos position precision print private program protected public quote read readwrite real rec recl recursive result return rewind save select selectcase selecttype sequential sign size stat status stop stream subroutine target then to type unformatted unit use value volatile wait where while write 
+
+keywords.$(file.patterns.f95)=$(keywordclass.fortran)
+keywords.$(file.patterns.f77)=$(keywordclass.fortran)
+
+# keywords2 is for highlighting intrinsic and extended functions
+keywords2.$(file.patterns.fortran)=abs achar acos acosd adjustl adjustr aimag aimax0 aimin0 aint ajmax0 ajmin0 akmax0 akmin0 all allocated alog alog10 amax0 amax1 amin0 amin1 amod anint any asin asind associated atan atan2 atan2d atand bitest bitl bitlr bitrl bjtest bit_size bktest break btest cabs ccos cdabs cdcos cdexp cdlog cdsin cdsqrt ceiling cexp char clog cmplx conjg cos cosd cosh count cpu_time cshift csin csqrt dabs dacos dacosd dasin dasind datan datan2 datan2d datand date date_and_time dble dcmplx dconjg dcos dcosd dcosh dcotan ddim dexp dfloat dflotk dfloti dflotj digits dim dimag dint dlog dlog10 dmax1 dmin1 dmod dnint dot_product dprod dreal dsign dsin dsind dsinh dsqrt dtan dtand dtanh eoshift epsilon errsns exp exponent float floati floatj floatk floor fraction free huge iabs iachar iand ibclr ibits ibset ichar idate idim idint idnint ieor ifix iiabs iiand iibclr iibits iibset iidim iidint iidnnt iieor iifix iint iior iiqint iiqnnt iishft iishftc iisign ilen imax0 imax1 imin0 imin1 imod index inint inot int int1 int2 int4 int8 iqint iqnint ior ishft ishftc isign isnan izext jiand jibclr jibits jibset jidim jidint jidnnt jieor jifix jint jior jiqint jiqnnt jishft jishftc jisign jmax0 jmax1 jmin0 jmin1 jmod jnint jnot jzext kiabs kiand kibclr kibits kibset kidim kidint kidnnt kieor kifix kind kint kior kishft kishftc kisign kmax0 kmax1 kmin0 kmin1 kmod knint knot kzext lbound leadz len len_trim lenlge lge lgt lle llt log log10 logical lshift malloc matmul max max0 max1 maxexponent maxloc maxval merge min min0 min1 minexponent minloc minval mod modulo mvbits nearest nint not nworkers number_of_processors pack popcnt poppar precision present product radix random random_number random_seed range real repeat reshape rrspacing rshift scale scan secnds selected_int_kind selected_real_kind set_exponent shape sign sin sind sinh size sizeof sngl snglq spacing spread sqrt sum system_clock tan tand tanh tiny transfer transpose trim ubound unpack verify
+
+# keywords3 are nonstardard, extended and user defined functions
+keywords3.$(file.patterns.fortran)=cdabs cdcos cdexp cdlog cdsin cdsqrt cotan cotand dcmplx dconjg dcotan dcotand decode dimag dll_export dll_import doublecomplex dreal dvchk encode find flen flush getarg getcharqq getcl getdat getenv gettim hfix ibchng identifier imag int1 int2 int4 intc intrup invalop iostat_msg isha ishc ishl jfix lacfar locking locnear map nargs nbreak ndperr ndpexc offset ovefl peekcharqq precfill prompt qabs qacos qacosd qasin qasind qatan qatand qatan2 qcmplx qconjg qcos qcosd qcosh qdim qexp qext qextd qfloat qimag qlog qlog10 qmax1 qmin1 qmod qreal qsign qsin qsind qsinh qsqrt qtan qtand qtanh ran rand randu rewrite segment setdat settim system timer undfl unlock union val virtual volatile zabs zcos zexp zlog zsin zsqrt
+
+# Fortran styles
+# Default
+description.style.fortran.0=$(description.style.default)
+style.fortran.0=$(colour.default)
+description.style.f77.0=$(description.style.default)
+style.f77.0=$(colour.default)
+description.style.fortran.32=$(description.style.default) 2
+style.fortran.32=$(colour.default)
+description.style.f77.32=$(description.style.default) 2
+style.f77.32=$(colour.default)
+# Comment
+description.style.fortran.1=$(description.style.comments)
+style.fortran.1=$(colour.comment)
+description.style.f77.1=$(description.style.comments)
+style.f77.1=$(colour.comment)
+# Number
+description.style.fortran.2=$(description.style.numbers)
+style.fortran.2=$(colour.number)
+description.style.f77.2=$(description.style.numbers)
+style.f77.2=$(colour.number)
+# Single quoted string
+description.style.fortran.3=$(description.style.singlequotedstrings)
+style.fortran.3=$(colour.literalstring)
+description.style.f77.3=$(description.style.singlequotedstrings)
+style.f77.3=$(colour.literalstring)
+# Double quoted string
+description.style.fortran.4=$(description.style.doublequotedstrings)
+style.fortran.4=$(colour.literalstring)
+description.style.f77.4=$(description.style.doublequotedstrings)
+style.f77.4=$(colour.literalstring)
+# End of line where string is not closed
+description.style.fortran.5=$(description.style.eolstringnotclosed)
+style.fortran.5=$(colour.default)
+description.style.f77.5=$(description.style.eolstringnotclosed)
+style.f77.5=$(colour.default)
+# Operators
+description.style.fortran.6=$(description.style.operators)
+style.fortran.6=$(colour.operator)
+description.style.f77.6=$(description.style.operators)
+style.f77.6=$(colour.operator)
+# Identifiers
+description.style.fortran.7=$(description.style.identifiers)
+style.fortran.7=$(colour.identifier)
+description.style.f77.7=$(description.style.identifiers)
+style.f77.7=$(colour.identifier)
+# Keywords
+description.style.fortran.8=$(description.style.keywords)
+style.fortran.8=$(colour.keyword)
+description.style.f77.8=$(description.style.keywords)
+style.f77.8=$(colour.keyword)
+# Keywords2
+description.style.fortran.9=$(description.style.keywords2)
+style.fortran.9=$(colour.keyword2)
+description.style.f77.9=$(description.style.keywords2)
+style.f77.9=$(colour.keyword2)
+# Keywords3
+description.style.fortran.10=$(description.style.keywords3)
+style.fortran.10=$(colour.keyword3)
+description.style.f77.10=$(description.style.keywords3)
+style.f77.10=$(colour.keyword3)
+# Preprocessor
+description.style.fortran.11=$(description.style.preprocessor)
+style.fortran.11=$(colour.preprocessor)
+description.style.f77.11=$(description.style.preprocessor)
+style.f77.11=$(colour.preprocessor)
+# Operators in .NAME. format
+description.style.fortran.12=Operators in .NAME. format
+style.fortran.12=$(colour.operator)
+description.style.f77.12=Operators in .NAME. format
+style.f77.12=$(colour.operator)
+# Labels
+description.style.fortran.13=Labels
+style.fortran.13=$(colour.value)
+description.style.f77.13=Labels
+style.f77.13=$(colour.value)
+# Continuation
+description.style.fortran.14=Continuation
+style.fortran.14=$(colour.default)
+description.style.f77.14=Continuation
+style.f77.14=$(colour.default)
+
+#== Lisp
+
+file.patterns.lisp=*.lsp;*.lisp
+file.patterns.scheme=*.scm;*.smd;*.ss
+
+lexer.$(file.patterns.lisp)=lisp
+lexer.$(file.patterns.scheme)=lisp
+
+# lisp build in functions, xlisp dialect
+keywords.$(file.patterns.lisp)= not defun + - * / = < > <= >= princ eval apply funcall quote identity function complement backquote lambda set setq setf defun defmacro gensym make symbol intern symbol name symbol value symbol plist get getf putprop remprop hash make array aref car cdr caar cadr cdar cddr caaar caadr cadar caddr cdaar cdadr cddar cdddr caaaar caaadr caadar caaddr cadaar cadadr caddar cadddr cdaaar cdaadr cdadar cdaddr cddaar cddadr cdddar cddddr cons list append reverse last nth nthcdr member assoc subst sublis nsubst  nsublis remove length list length mapc mapcar mapl maplist mapcan mapcon rplaca rplacd nconc delete atom symbolp numberp boundp null listp consp minusp zerop plusp evenp oddp eq eql equal cond case and or let l if prog prog1 prog2 progn go return do dolist dotimes catch throw error cerror break continue errset baktrace evalhook truncate float rem min max abs sin cos tan expt exp sqrt random logand logior logxor lognot bignums logeqv lognand lognor logorc2 logtest logbitp logcount integer length nil
+
+# Scheme functions, R5RS
+keywords.$(file.patterns.scheme)= + - * / = < > <= >= => abs acos and angle append apply asin assoc assoc assq assv atan begin boolean? caar cadr call-with-current-continuation call/cc call-with-input-file call-with-output-file call-with-values car cdr caar cadr cdar cddr caaar caadr cadar caddr cdaar cdadr cddar cdddr caaaar caaadr caadar caaddr cadaar cadadr caddar cadddr cdaaar cdaadr cdadar cdaddr cddaar cddadr cdddar cddddr case ceiling char->integer char-alphabetic? char-ci<=? char-ci<? char-ci=? char-ci>=? char-ci>? char-downcase char-lower-case? char-numeric? char-ready? char-upcase char-upper-case? char-whitespace? char<=? char<? char=? char>=? char>? char? close-input-port close-output-port complex? cond cons cos current-input-port current-output-port define define-syntax delay denominator display do dynamic-wind else eof-object? eq? equal? eqv? eval even? exact->inexact exact? exp expt floor for-each force gcd if imag-part inexact->exact inexact? input-port? integer->char integer? interaction-environment lambda lcm length let let* let-syntax letrec letrec-syntax list list->string list->vector list-ref list-tail list? load log magnitude make-polar make-rectangular make-string make-vector map max member memq memv min modulo negative? newline not null-environment null? number->string number? numerator odd? open-input-file open-output-file or output-port? pair? peek-char input-port? output-port? positive? procedure? quasiquote quote quotient rational? rationalize read read-char real-part real? remainder reverse round scheme-report-environment set! set-car! set-cdr! sin sqrt string string->list string->number string->symbol string-append string-ci<=? string-ci<? string-ci=? string-ci>=? string-ci>? string-copy string-fill! string-length string-ref string-set! string<=? string<? string=? string>=? string>? string? substring symbol->string symbol? syntax-rules transcript-off transcript-on truncate unquote unquote-splicing values vector vector->list vector-fill! vector-length vector-ref vector-set! vector? with-input-from-file with-output-to-file write write-char zero?
+
+# LISP styles
+
+# Default
+description.style.lisp.32=$(description.style.default)
+style.lisp.32=$(colour.default)
+# White space
+description.style.lisp.0=$(description.style.whitespace)
+style.lisp.0=$(colour.whitespace)
+# Line Comment
+description.style.lisp.1=$(description.style.linecomments)
+style.lisp.1=$(colour.comment)
+# Number
+description.style.lisp.2=$(description.style.numbers)
+style.lisp.2=$(colour.number)
+# Keyword
+description.style.lisp.3=$(description.style.keywords)
+style.lisp.3=$(colour.keyword)
+# String
+description.style.lisp.6=$(description.style.literalstrings)
+style.lisp.6=$(colour.literalstring)
+# Operators
+description.style.lisp.10=$(description.style.operators)
+style.lisp.10=$(colour.operator)
+# Identifiers
+description.style.lisp.9=$(description.style.identifiers)
+style.lisp.9=$(colour.identifier)
+# End of line where string is not closed
+description.style.lisp.8=$(description.style.eolstringnotclosed)
+style.lisp.8=$(colour.default)
+# Matched Operators
+description.style.lisp.34=Matched Operators
+style.lisp.34=$(colour.operator)
+description.style.lisp.35=Matched Operators 2
+style.lisp.35=$(colour.operator)
+
+#== Perl
+
+file.patterns.perl=*.pl;*.pm;*.cgi;*.pod
+
+lexer.$(file.patterns.perl)=perl
+
+keywords.$(file.patterns.perl)=NULL __FILE__ __LINE__ __PACKAGE__ __DATA__ __END__ AUTOLOAD BEGIN CORE DESTROY END EQ GE GT INIT LE LT NE CHECK abs accept alarm and atan2 bind binmode bless caller chdir chmod chomp chop chown chr chroot close closedir cmp connect continue cos crypt dbmclose dbmopen defined delete die do dump each else elsif endgrent endhostent endnetent endprotoent endpwent endservent eof eq eval exec exists exit exp fcntl fileno flock for foreach fork format formline ge getc getgrent getgrgid getgrnam gethostbyaddr gethostbyname gethostent getlogin getnetbyaddr getnetbyname getnetent getpeername getpgrp getppid getpriority getprotobyname getprotobynumber getprotoent getpwent getpwnam getpwuid getservbyname getservbyport getservent getsockname getsockopt glob gmtime goto grep gt hex if index int ioctl join keys kill last lc lcfirst le length link listen local localtime lock log lstat lt map mkdir msgctl msgget msgrcv msgsnd my ne next no not oct open opendir or ord our pack package pipe pop pos print printf prototype push quotemeta qu rand read readdir readline readlink readpipe recv redo ref rename require reset return reverse rewinddir rindex rmdir scalar seek seekdir select semctl semget semop send setgrent sethostent setnetent setpgrp setpriority setprotoent setpwent setservent setsockopt shift shmctl shmget shmread shmwrite shutdown sin sleep socket socketpair sort splice split sprintf sqrt srand stat study sub substr symlink syscall sysopen sysread sysseek system syswrite tell telldir tie tied time times truncate uc ucfirst umask undef unless unlink unpack unshift untie until use utime values vec wait waitpid wantarray warn while write xor
+
+# generic keywords
+bash_keywords1=alias ar asa awk banner basename bash bc bdiff break bunzip2 bzip2 cal calendar case cat cc cd chmod cksum clear cmp col comm compress continue cp cpio crypt csplit ctags cut date dc dd declare deroff dev df diff diff3 dircmp dirname do done du echo ed egrep elif else env esac eval ex exec exit expand export expr false fc fgrep fi file find fmt fold for function functions getconf getopt getopts grep gres hash head help history iconv id if in integer jobs join kill local lc let line ln logname look ls m4 mail mailx make man mkdir more mt mv newgrp nl nm nohup ntps od pack paste patch pathchk pax pcat perl pg pr print printf ps pwd read readonly red return rev rm rmdir sed select set sh shift size sleep sort spell split start stop strings strip stty sum suspend sync tail tar tee test then time times touch tr trap true tsort tty type typeset ulimit umask unalias uname uncompress unexpand uniq unpack unset until uudecode uuencode vi vim vpax wait wc whence which while who wpaste wstart xargs zcat
+
+# additional keywords from coreutils
+bash_keywords2=chgrp chown chroot dir dircolors factor groups hostid install link md5sum mkfifo mknod nice pinky printenv ptx readlink seq sha1sum shred stat su tac unlink users vdir whoami yes
+
+keywords.$(file.patterns.bash)=$(bash_keywords1) $(bash_keywords2)
+
+# Perl styles
+# The perl styles are set to lots of different foreground and background colours as an
+# aid to debugging SciTE's Perl lexer - not because this is a good way to display Perl.
+description.style.perl.32=$(description.style.default)
+style.perl.32=$(colour.default)
+# White space
+description.style.perl.0=$(description.style.whitespace)
+style.perl.0=$(colour.default)
+# Error
+description.style.perl.1=Error
+style.perl.1=$(colour.error)
+# Comment
+description.style.perl.2=$(description.style.comments)
+style.perl.2=$(colour.comment)
+# POD: = at beginning of line
+description.style.perl.3=POD: = at beginning of line
+style.perl.3=$(colour.comment)
+# Number
+description.style.perl.4=$(description.style.numbers)
+style.perl.4=$(colour.number)
+# Keyword
+description.style.perl.5=$(description.style.keywords)
+style.perl.5=$(colour.keyword)
+# Double quoted string
+description.style.perl.6=$(description.style.doublequotedstrings)
+style.perl.6=$(colour.literalstring)
+# Single quoted string
+description.style.perl.7=$(description.style.singlequotedstrings)
+style.perl.7=$(colour.literalstring)
+# Symbols / Punctuation. Currently not used by LexPerl.
+description.style.perl.8=<unused>
+style.perl.8=$(colour.entity)
+# Preprocessor. Currently not used by LexPerl.
+description.style.perl.9=<unused>
+style.perl.9=$(colour.preprocessor)
+# Operators
+description.style.perl.10=$(description.style.operators)
+style.perl.10=$(colour.operator)
+# Identifiers (functions, etc.)
+description.style.perl.11=$(description.style.identifiers) (functions, etc.)
+style.perl.11=$(colour.identifier)
+# Scalars: $var
+description.style.perl.12=Scalars: $var
+style.perl.12=$(colour.default)
+# Array: @var
+description.style.perl.13=Array: @var
+style.perl.13=$(colour.variable)
+# Hash: %var
+description.style.perl.14=Hash: %var
+style.perl.14=$(colour.variable)
+# Symbol table: *var
+description.style.perl.15=Symbol table: *var
+style.perl.15=$(colour.default)
+# Regex: /re/ or m{re}
+description.style.perl.17=Regex: /re/ or m{re}
+style.perl.17=$(colour.literalstring)
+# Substitution: s/re/ore/
+description.style.perl.18=Substitution: s/re/ore/
+style.perl.18=$(colour.literalstring)
+# Long Quote (qq, qr, qw, qx) -- obsolete: replaced by qq, qx, qr, qw
+description.style.perl.19=Long Quote (qq, qr, qw, qx) -- obsolete: replaced by qq, qx, qr, qw
+style.perl.19=$(colour.default)
+# Back Ticks
+description.style.perl.20=Back Ticks
+style.perl.20=$(colour.default)
+# Data Section: __DATA__ or __END__ at beginning of line
+description.style.perl.21=Data Section: __DATA__ or __END__ at beginning of line
+style.perl.21=$(colour.default)
+# Here-doc (delimiter)
+description.style.perl.22=Here-doc (delimiter)
+style.perl.22=$(colour.default)
+# Here-doc (single quoted, q)
+description.style.perl.23=Here-doc (single quoted, q)
+style.perl.23=$(colour.default)
+# Here-doc (double quoted, qq)
+description.style.perl.24=Here-doc (double quoted, qq)
+style.perl.24=$(colour.default)
+# Here-doc (back ticks, qx)
+description.style.perl.25=Here-doc (back ticks, qx)
+style.perl.25=$(colour.default)
+# Single quoted string, generic
+description.style.perl.26=$(description.style.singlequotedstrings) (generic)
+style.perl.26=$(colour.literalstring)
+# qq = Double quoted string
+description.style.perl.27=qq = $(description.style.doublequotedstrings)
+style.perl.27=$(colour.literalstring)
+# qx = Back ticks
+description.style.perl.28=qx = Back ticks
+style.perl.28=$(style.perl.20)
+# qr = Regex
+description.style.perl.29=qr = Regex
+style.perl.29=$(style.perl.17)
+# qw = Array
+description.style.perl.30=qw = Array
+style.perl.30=$(style.perl.13)
+# POD: verbatim paragraphs
+description.style.perl.31=POD: verbatim paragraphs
+style.perl.31=$(colour.comment)
+
+#== Python
+
+file.patterns.py=*.py;*.pyw
+file.patterns.scons=SConstruct;SConscript
+
+lexer.$(file.patterns.py)=python
+lexer.$(file.patterns.scons)=python
+
+keywordclass.python=and assert break class continue def del elif else except exec finally for from global if import in is lambda None not or pass print raise return try while yield
+
+keywords.$(file.patterns.py)=$(keywordclass.python)
+keywords.$(file.patterns.scons)=$(keywordclass.python)
+
+# Python styles
+# White space
+description.style.python.0=$(description.style.whitespace)
+style.python.0=$(colour.whitespace)
+# Comment
+description.style.python.1=$(description.style.comments)
+style.python.1=$(colour.comment)
+# Number
+description.style.python.2=$(description.style.numbers)
+style.python.2=$(colour.number)
+# String
+description.style.python.3=$(description.style.literalstrings)
+style.python.3=$(colour.literalstring)
+# Single quoted string
+description.style.python.4=$(description.style.singlequotedstrings)
+style.python.4=$(colour.literalstring)
+# Keyword
+description.style.python.5=$(description.style.keywords)
+style.python.5=$(colour.keyword)
+# Triple quotes
+description.style.python.6=Triple quotes
+style.python.6=$(colour.literalstring)
+# Triple double quotes
+description.style.python.7=Triple double quotes
+style.python.7=$(colour.literalstring)
+# Class name definition
+description.style.python.8=Class name definition
+style.python.8=$(colour.identifier)
+# Function or method name definition
+description.style.python.9=Function or method name definition
+style.python.9=$(colour.identifier2)
+# Operators
+description.style.python.10=$(description.style.operators)
+style.python.10=$(colour.operator)
+# Identifiers
+description.style.python.11=$(description.style.identifiers)
+style.python.11=$(colour.identifier)
+# Comment-blocks
+description.style.python.12=$(description.style.comments)-blocks
+style.python.12=$(colour.comment)
+# End of line where string is not closed
+description.style.python.13=$(description.style.eolstringnotclosed)
+style.python.13=$(colour.default)
+# Highlighted identifiers
+description.style.python.14=Highlighted identifiers
+style.python.14=$(colour.identifier)
+# Decorators
+description.style.python.15=Decorators
+style.python.15=$(colour.identifier3)
+# Matched Operators
+description.style.python.34=Matched Operators
+style.python.34=$(colour.operator)
+description.style.python.35=Matched Operators 2
+style.python.35=$(colour.operator)
+
+#== Ruby
+
+file.patterns.rb=*.rb;*.rbw
+lexer.$(file.patterns.rb)=ruby
+
+keywordclass.ruby=__FILE__ and def end in or self unless __LINE__ begin defined? ensure module redo super until BEGIN break do false next rescue then when END case else for nil retry true while alias class elsif if not return undef yield
+keywords.$(file.patterns.rb)=$(keywordclass.ruby)
+
+# ruby styles
+# White space
+description.style.ruby.0=$(description.style.whitespace)
+style.ruby.0=$(colour.whitespace)
+# Error
+description.style.ruby.1=Error
+style.ruby.1=$(colour.error)
+# Comment line
+description.style.ruby.2=$(description.style.linecomments)
+style.ruby.2=$(colour.comment)
+# POD
+description.style.ruby.3=POD
+style.ruby.3=$(colour.comment)
+# Number
+description.style.ruby.4=$(description.style.numbers)
+style.ruby.4=$(colour.number)
+# Word
+description.style.ruby.5=Word
+style.ruby.5=$(colour.keyword)
+# String
+description.style.ruby.6=$(description.style.literalstrings)
+style.ruby.6=$(colour.literalstring)
+# Character
+description.style.ruby.7=$(description.style.characters)
+style.ruby.7=$(colour.literalstring)
+# Class name
+description.style.ruby.8=Class name
+style.ruby.8=$(colour.identifier)
+# Def name
+description.style.ruby.9=Def name
+style.ruby.9=$(colour.identifier2)
+# Operator
+description.style.ruby.10=$(description.style.operators)
+style.ruby.10=$(colour.operator)
+# Identifier
+description.style.ruby.11=$(description.style.identifiers)
+style.ruby.11=$(colour.identifier)
+# Regex
+description.style.ruby.12=Regex
+style.ruby.12=$(colour.literalstring)
+# Global
+description.style.ruby.13=Global
+style.ruby.13=$(colour.identifier3)
+# Symbol
+description.style.ruby.14=$(description.style.symbols)
+style.ruby.14=$(colour.entity)
+# MODULE_NAME
+description.style.ruby.15=MODULE_NAME
+style.ruby.15=$(colour.preprocessor)
+# INSTANCE_VAR
+description.style.ruby.16=INSTANCE_VAR
+style.ruby.16=$(colour.variable)
+# CLASS_VAR
+description.style.ruby.17=CLASS_VAR
+style.ruby.17=$(colour.identifier)
+# BACKTICKS
+description.style.ruby.18=BACKTICKS
+style.ruby.18=$(colour.literalstring)
+# DATASECTION
+description.style.ruby.19=DATASECTION
+style.ruby.19=$(colour.literalstring)
+# HERE_DELIM
+description.style.ruby.20=HERE_DELIM
+style.ruby.20=$(colour.literalstring)
+# HERE_Q
+description.style.ruby.21=HERE_Q
+style.ruby.21=$(colour.literalstring)
+# HERE_QQ
+description.style.ruby.22=HERE_QQ
+style.ruby.22=$(colour.literalstring)
+# HERE_QX
+description.style.ruby.23=HERE_QX
+style.ruby.23=$(colour.literalstring)
+# STRING_Q
+description.style.ruby.24=STRING_Q
+style.ruby.24=$(colour.literalstring)
+# STRING_QQ
+description.style.ruby.25=STRING_QQ
+style.ruby.25=$(colour.literalstring)
+# STRING_QX
+description.style.ruby.26=STRING_QX
+style.ruby.26=$(colour.literalstring)
+# STRING_QR
+description.style.ruby.27=STRING_QR
+style.ruby.27=$(colour.literalstring)
+# STRING_QW
+description.style.ruby.28=STRING_QW
+style.ruby.28=$(colour.literalstring)
+# Demoted Keyword
+description.style.ruby.29=Demoted Keyword
+style.ruby.29=$(style.ruby.5)
+# STDIN
+description.style.ruby.30=STDIN
+style.ruby.30=$(colour.default)
+# STDOUT
+description.style.ruby.31=STDOUT
+style.ruby.31=$(colour.default)
+# STDERR
+description.style.ruby.40=STDERR
+style.ruby.40=$(colour.default)
+# Matched Operators
+description.style.ruby.34=Matched Operators
+style.ruby.34=$(colour.operator)
+description.style.ruby.35=Matched Operators 2
+style.ruby.35=$(colour.operator)
+
+#== Smalltalk
+
+file.patterns.smalltalk=*.st;*.pac
+lexer.$(file.patterns.smalltalk)=smalltalk
+
+keywords.$(file.patterns.smalltalk)=ifTrue: ifFalse: whileTrue: whileFalse: ifNil: ifNotNil: whileTrue whileFalse repeat isNil notNil do: and: or: not
+
+# Styles
+
+# Default
+description.style.smalltalk.0=$(description.style.default)
+style.smalltalk.0=$(colour.default)
+# String
+description.style.smalltalk.1=$(description.style.literalstrings)
+style.smalltalk.1=$(colour.literalstring)
+# Number
+description.style.smalltalk.2=$(description.style.numbers)
+style.smalltalk.2=$(colour.number)
+# Comment
+description.style.smalltalk.3=$(description.style.comments)
+style.smalltalk.3=$(colour.comment)
+# Symbol
+description.style.smalltalk.4=$(description.style.symbols)
+style.smalltalk.4=$(colour.entity)
+# Binary
+description.style.smalltalk.5=Binary
+style.smalltalk.5=$(colour.operator)
+# Boolean
+description.style.smalltalk.6=Boolean
+style.smalltalk.6=$(colour.keyword)
+# self
+description.style.smalltalk.7=self
+style.smalltalk.7=$(colour.keyword)
+# super
+description.style.smalltalk.8=super
+style.smalltalk.8=$(colour.keyword)
+# nil
+description.style.smalltalk.9=nil
+style.smalltalk.9=$(colour.keyword)
+# Global
+description.style.smalltalk.10=Global
+style.smalltalk.10=$(colour.default)
+# Return
+description.style.smalltalk.11=Return
+style.smalltalk.11=$(colour.keyword)
+# Special
+description.style.smalltalk.12=Special
+style.smalltalk.12=$(colour.default)
+# KwSend
+description.style.smalltalk.13=KwSend
+style.smalltalk.13=$(colour.keyword)
+# Assignment
+description.style.smalltalk.14=Assignment
+style.smalltalk.14=$(colour.default)
+# Character
+description.style.smalltalk.15=$(description.style.characters)
+style.smalltalk.15=$(colour.literalstring)
+# Special selector
+description.style.smalltalk.16=Special selector
+style.smalltalk.16=$(colour.keyword)
+
+#== SQL
+
+file.patterns.sql=*.sql
+file.patterns.plsql=*.spec;*.body;*.sps;*.spb;*.sf;*.sp
+
+lexer.$(file.patterns.sql)=sql
+lexer.$(file.patterns.plsql)=sql
+
+# SQL styles
+# White space
+description.style.sql.0=$(description.style.whitespace)
+style.sql.0=$(colour.whitespace)
+# Comment
+description.style.sql.1=$(description.style.comments)
+style.sql.1=$(colour.comment)
+# Line Comment
+description.style.sql.2=$(description.style.linecomments)
+style.sql.2=$(colour.comment)
+# Doc comment
+description.style.sql.3=$(description.style.doccomments)
+style.sql.3=$(colour.comment)
+# Number
+description.style.sql.4=$(description.style.numbers)
+style.sql.4=$(colour.number)
+# Keyword
+description.style.sql.5=$(description.style.keywords)
+style.sql.5=$(colour.keyword)
+# Double quoted string
+description.style.sql.6=$(description.style.doublequotedstrings)
+style.sql.6=$(colour.literalstring)
+# Single quoted string
+description.style.sql.7=$(description.style.singlequotedstrings)
+style.sql.7=$(colour.literalstring)
+# SQL*Plus
+description.style.sql.8=SQL*Plus
+style.sql.8=$(colour.preprocessor)
+# SQL*Plus PROMPT
+description.style.sql.9=SQL*Plus PROMPT
+style.sql.9=$(colour.directive)
+# Operators
+description.style.sql.10=$(description.style.operators)
+style.sql.10=$(colour.operator)
+# Identifiers
+description.style.sql.11=$(description.style.identifiers)
+style.sql.11=$(colour.identifier)
+# End of line where string is not closed / not used
+description.style.sql.12=<unused>
+style.sql.12=$(colour.literalstring)
+# SQL*Plus Comment
+description.style.sql.13=SQL*Plus Comment
+style.sql.13=$(colour.comment)
+# not used
+# style.sql.14=
+# Hash Line Comment
+description.style.sql.15=Hash Line Comment
+style.sql.15=$(colour.comment)
+# Keywords2: Database objects
+description.style.sql.16=$(description.style.keywords2): Database objects
+style.sql.16=$(colour.keyword2)
+# Comment Doc Keyword
+description.style.sql.17=$(description.style.commentkeyword)
+style.sql.17=$(colour.comment)
+# Comment Doc Keyword Error
+description.style.sql.18=$(description.style.commentkeyworderror)
+style.sql.18=$(colour.error)
+# Keywords5: User Keywords 1
+description.style.sql.19=Keywords5: User Keywords 1
+style.sql.19=$(colour.keyword3)
+# Keywords6: User Keywords 2
+description.style.sql.20=Keywords6: User Keywords 2
+style.sql.20=$(colour.keyword3)
+# Keywords7: User Keywords 3
+description.style.sql.21=Keywords7: User Keywords 3
+style.sql.21=$(colour.keyword3)
+# Keywords8: User Keywords 4
+description.style.sql.22=Keywords8: User Keywords 4
+style.sql.22=$(colour.keyword3)
+
+keywords.$(file.patterns.sql)=absolute action add admin after aggregate alias all allocate alter and any are array as asc assertion at authorization before begin binary bit blob boolean both breadth by call cascade cascaded case cast catalog char character check class clob close collate collation column commit completion connect connection constraint constraints constructor continue corresponding create cross cube current current_date current_path current_role current_time current_timestamp current_user cursor cycle data date day deallocate dec decimal declare default deferrable deferred delete depth deref desc describe descriptor destroy destructor deterministic dictionary diagnostics disconnect distinct domain double drop dynamic each else end end-exec equals escape every except exception exec execute external false fetch first float for foreign found from free full function general get global go goto grant group grouping having host hour identity if ignore immediate in indicator initialize initially inner inout input insert int integer intersect interval into is isolation iterate join key language large last lateral leading left less level like limit local localtime localtimestamp locator map match minute modifies modify module month names national natural nchar nclob new next no none not null numeric object of off old on only open operation option or order ordinality out outer output pad parameter parameters partial path postfix precision prefix preorder prepare preserve primary prior privileges procedure public read reads real recursive ref references referencing relative restrict result return returns revoke right role rollback rollup routine row rows savepoint schema scroll scope search second section select sequence session session_user set sets size smallint some| space specific specifictype sql sqlexception sqlstate sqlwarning start state statement static structure system_user table temporary terminate than then time timestamp timezone_hour timezone_minute to trailing transaction translation treat trigger true under union unique unknown unnest update usage user using value values varchar variable varying view when whenever where with without work write year zone
+
+keywords.$(file.patterns.plsql)=all alter and any array as asc at authid avg begin between binary_integer body boolean bulk by char char_base check close cluster collect comment commit compress connect constant create current currval cursor date day declare decimal default delete desc distinct do drop else elsif end exception exclusive execute exists exit extends false fetch float for forall from function goto group having heap hour if immediate in index indicator insert integer interface intersect interval into is isolation java level like limited lock long loop max min minus minute mlslabel mod mode month natural naturaln new nextval nocopy not nowait null number number_base ocirowid of on opaque open operator option or order organization others out package partition pctfree pls_integer positive positiven pragma prior private procedure public raise range raw real record ref release return reverse rollback row rowid rownum rowtype savepoint second select separate set share smallint space sql sqlcode sqlerrm start stddev subtype successful sum synonym sysdate table then time timestamp to trigger true type uid union unique update use user validate values varchar varchar2 variance view when whenever where while with work write year zone
+
+# Keywords for PlDoc comments
+keywords3.$(file.patterns.sql)=param author since return see deprecated todo
+
+# Keywords for SQL*Plus
+keywords4.$(file.patterns.sql)=acc~ept a~ppend archive log attribute bre~ak bti~tle c~hange cl~ear col~umn comp~ute conn~ect copy def~ine del desc~ribe disc~onnect e~dit exec~ute exit get help ho~st i~nput l~ist passw~ord pau~se pri~nt pro~mpt quit recover rem~ark repf~ooter reph~eader r~un sav~e set sho~w shutdown spo~ol sta~rt startup store timi~ng tti~tle undef~ine var~iable whenever oserror whenever sqlerror
+
+# User keywords 1
+# Keywords for Standard packages
+keywords5.$(file.patterns.sql)=dbms_output.disable dbms_output.enable dbms_output.get_line dbms_output.get_lines dbms_output.new_line dbms_output.put dbms_output.put_line @@error @@version @@fetch_status
+
+#== Pascal
+
+file.patterns.pascal=*.dpr;*.dpk;*.pas;*.dfm;*.pp
+lexer.$(file.patterns.pascal)=pascal
+
+keywordclass.pascal=and array asm begin case cdecl class const constructor default destructor div do downto else end end. except exit exports external far file finalization finally for function goto if implementation in index inherited initialization inline interface label library message mod near nil not object of on or out overload override packed pascal private procedure program property protected public published raise read record register repeat resourcestring safecall set shl shr stdcall stored string then threadvar to try type unit until uses var virtual while with write xor
+keywordclass.pascalclasses=write read default public protected private property published stored
+
+keywords.$(file.patterns.pascal)=$(keywordclass.pascal)
+keywords2.$(file.patterns.pascal)=$(keywordclass.pascalclasses)
+
+# Pascal styles
+# Default/White space
+description.style.pascal.0=$(description.style.whitespace)
+style.pascal.0=$(colour.whitespace)
+# Comment
+description.style.pascal.1=$(description.style.comments)
+style.pascal.1=$(colour.comment)
+# Line Comment
+description.style.pascal.2=$(description.style.linecomments)
+style.pascal.2=$(colour.comment)
+# Doc comment
+description.style.pascal.3=$(description.style.doccomments)
+style.pascal.3=$(colour.comment)
+# Number
+description.style.pascal.4=$(description.style.numbers)
+style.pascal.4=$(colour.number)
+# Keyword
+description.style.pascal.5=$(description.style.keywords)
+style.pascal.5=$(colour.keyword)
+# Double quoted string
+description.style.pascal.6=$(description.style.doublequotedstrings)
+style.pascal.6=$(colour.literalstring)
+# Single quoted string
+description.style.pascal.7=$(description.style.singlequotedstrings)
+style.pascal.7=$(colour.literalstring)
+# Symbols
+description.style.pascal.8=$(description.style.symbols)
+style.pascal.8=$(colour.entity)
+# Preprocessor
+description.style.pascal.9=$(description.style.preprocessor)
+style.pascal.9=$(colour.preprocessor)
+# Operators
+description.style.pascal.10=$(description.style.operators)
+style.pascal.10=$(colour.operator)
+# Identifiers
+description.style.pascal.11=$(description.style.identifiers)
+style.pascal.11=$(colour.identifier)
+# Regular expression
+description.style.pascal.14=Regular expression
+style.pascal.14=$(colour.literalstring)
+# Comment (documentation keyword)
+description.style.pascal.17=Comment (documentation keyword)
+style.pascal.17=$(colour.keyword)
+# Comment (documentation keyword error)
+description.style.pascal.18=Comment (documentation keyword error)
+style.pascal.18=$(colour.comment)
+
+# AutoIt v3
+file.patterns.au3=*.au3
+lexer.$(file.patterns.au3)=au3
+keywordclass.au3=and byref case continueloop dim do else elseif endfunc endif endselect exit exitloop for func global if local next not or return select step then to until wend while exit
+keywords.$(file.patterns.au3)=$(keywordclass.au3)
+#autoit functions
+keywords2.$(file.patterns.au3)=abs acos adlibdisable adlibenable asc asin atan autoitsetoption autoitwingettitle autoitwinsettitle bitand bitnot bitor bitshift bitxor blockinput break call cdtray chr clipget clipput controlclick controlcommand controldisable controlenable controlfocus controlgetfocus controlgetpos controlgettext controlhide controlmove controlsend controlsettext controlshow cos dec dircopy dircreate dirmove dirremove drivegetdrive drivegetfilesystem drivegetlabel drivegetserial drivegettype drivesetlabel drivespacefree drivespacetotal drivestatus envget envset envupdate eval exp filechangedir fileclose filecopy filecreateshortcut filedelete fileexists filefindfirstfile filefindnextfile filegetattrib filegetlongname filegetshortname filegetsize filegettime filegetversion fileinstall filemove fileopen fileopendialog fileread filereadline filerecycle filerecycleempty filesavedialog fileselectfolder filesetattrib filesettime filewrite filewriteline guicreate guicreateex guidefaultfont guidelete guigetcontrolstate guihide guimsg guiread guirecvmsg guisendmsg guisetcontrol guisetcontroldata guisetcontrolex guisetcontrolfont guisetcontrolnotify guisetcoord guisetcursor guishow guiwaitclose guiwrite hex hotkeyset inidelete iniread iniwrite inputbox int isadmin isarray isdeclared isfloat isint isnumber isstring log memgetstats mod mouseclick mouseclickdrag mousedown mousegetcursor mousegetpos mousemove mouseup mousewheel msgbox number pixelchecksum pixelgetcolor pixelsearch processclose processexists processsetpriority processwait processwaitclose progressoff progresson progressset random regdelete regenumkey regenumval regread regwrite round run runasset runwait send seterror shutdown sin sleep soundplay soundsetwavevolume splashimageon splashoff splashtexton sqrt statusbargettext string stringaddcr stringformat stringinstr stringisalnum stringisalpha stringisascii stringisdigit stringisfloat stringisint stringislower stringisspace stringisupper stringisxdigit stringleft stringlen stringlower stringmid stringreplace stringright stringsplit stringstripcr stringstripws stringtrimleft stringtrimright stringupper tan timerstart timerstop tooltip traytip ubound urldownloadtofile winactivate winactive winclose winexists wingetcaretpos wingetclasslist wingetclientsize wingethandle wingetpos wingetstate wingettext wingettitle winkill winmenuselectitem winminimizeall winminimizeallundo winmove winsetontop winsetstate winsettitle winwait winwaitactive winwaitclose winwaitnotactive
+#autoit macros
+keywords3.$(file.patterns.au3)=@appdatacommondir @appdatadir @autoitversion @commonfilesdir @compiled @computername @comspec @cr @crlf @desktopcommondir @desktopdir @desktopheight @desktopwidth @documentscommondir @error @favoritescommondir @favoritesdir @homedrive @homepath @homeshare @hour @ipaddress1 @ipaddress2 @ipaddress3 @ipaddress4 @lf @logondnsdomain @logondomain @logonserver @mday @min @mon @mydocumentsdir @osbuild @oslang @osservicepack @ostype @osversion @programfilesdir @programscommondir @programsdir @scriptdir @scriptfullpath @scriptname @sec @startmenucommondir @startmenudir @startupcommondir @startupdir @sw_hide @sw_maximize @sw_minimize @sw_restore @sw_show @systemdir @tab @tempdir @userprofiledir @username @wday @windowsdir @workingdir @yday @year
+#autoit Sent Keys
+keywords4.$(file.patterns.au3)={!} {#} {^} {{} {}} {+} {alt} {altdown} {altup} {appskey} {asc} {backspace} {browser_back} {browser_favorites} {browser_forward} {browser_home} {browser_refresh} {browser_search} {browser_stop} {bs} {capslock} {ctrlbreak} {ctrldown} {ctrlup} {del} {delete} {down} {end} {enter} {esc} {escape} {f1} {f10} {f11} {f12} {f2} {f3} {f4} {f5} {f6} {f7} {f8} {f9} {home} {ins} {insert} {lalt} {launch_app1} {launch_app2} {launch_mail} {launch_media} {lctrl} {left} {lshift} {lwin} {lwindown} {media_next} {media_play_pause} {media_prev} {media_stop} {numlock} {numpad0} {numpad1} {numpad2} {numpad3} {numpad4} {numpad5} {numpad6} {numpad7} {numpad8} {numpad9} {numpadadd} {numpaddiv} {numpaddot} {numpadenter} {numpadmult} {numpadsub} {pause} {pgdn} {pgup} {printscreen} {ralt} {rctrl} {right} {rshift} {rwin} {rwindown} {scrolllock} {shiftdown} {shiftup} {sleep} {space} {tab} {up} {volume_down} {volume_mute} {volume_up}
+#Pre-Processor
+keywords5.$(file.patterns.au3)=#include #include-once
+#Special
+keywords6.$(file.patterns.au3)=#region #endregion
+
+# White space
+description.style.au3.0=$(description.style.whitespace)
+style.au3.0=$(colour.whitespace)
+# Comment line
+description.style.au3.1=$(description.style.comments)
+style.au3.1=$(colour.comment)
+# Comment block
+description.style.au3.2=$(description.style.blockcomments)
+style.au3.2=$(colour.comment)
+# Number
+description.style.au3.3=$(description.style.numbers)
+style.au3.3=$(colour.number)
+# Function
+description.style.au3.4=Functions
+style.au3.4=$(colour.keyword2)
+# Keyword
+description.style.au3.5=$(description.style.keywords)
+style.au3.5=$(colour.keyword)
+# Macro
+description.style.au3.6=Macros
+style.au3.6=$(colour.preprocessor)
+# String
+description.style.au3.7=$(description.style.literalstrings)
+style.au3.7=$(colour.literalstring)
+# Operator
+description.style.au3.8=$(description.style.operators)
+style.au3.8=$(colour.operator)
+# Variable
+description.style.au3.9=$(description.style.variables)
+style.au3.9=$(colour.variable)
+# Sent keys in string
+description.style.au3.10=Sent keys in string
+style.au3.10=$(colour.identifierinstring)
+# Pre-Processor
+description.style.au3.11=$(description.style.preprocessor)
+style.au3.11=$(colour.preprocessor)
+# Special
+description.style.au3.12=Special
+style.au3.12=$(colour.identifier3)
+# Expand abbreviations
+description.style.au3.13=Expand Abbreviations
+style.au3.13=$(colour.identifier2)
+# ComObjects
+description.style.au3.14=ComObjects
+style.au3.14=$(colour.identifier)
+
+# Generic lexer styles
+# White space
+description.style.generic.0=$(description.style.whitespace)
+style.generic.0=$(colour.whitespace)
+# Comment
+description.style.generic.1=$(description.style.comments)
+style.generic.1=$(colour.comment)
+# Line Comment
+description.style.generic.2=$(description.style.linecomments)
+style.generic.2=$(colour.comment)
+# Number
+description.style.generic.3=$(description.style.numbers)
+style.generic.3=$(colour.number)
+# Keyword
+description.style.generic.4=$(description.style.keywords)
+style.generic.4=$(colour.keyword)
+# More Keywords
+description.style.generic.5=$(description.style.keywords2)
+style.generic.5=$(colour.keyword2)
+# String
+description.style.generic.6=$(description.style.strings)
+style.generic.6=$(colour.literalstring)
+# Operators
+description.style.generic.7=$(description.style.operators)
+style.generic.7=$(colour.operator)
+# Default/Identifiers
+description.style.generic.8=$(description.style.default)/$(description.style.identifiers)
+style.generic.8=$(colour.identifier)
+# Even more Keywords
+description.style.generic.9=$(description.style.keywords3)
+style.generic.9=$(colour.keyword3)
+
+
+# Markdown lexer styles
+# White space
+description.style.markdown.0=$(description.style.whitespace)
+style.markdown.0=$(colour.whitespace)
+# Heading
+description.style.markdown.10=Heading
+style.markdown.10=$(colour.error)
+# Bullet
+description.style.markdown.11=Bullet list
+style.markdown.11=$(colour.error)
+# Numbered list
+description.style.markdown.12=Numbered list
+style.markdown.12=$(colour.error)
+# Unordered list
+description.style.markdown.13=Unordered list
+style.markdown.13=$(colour.error)
+# Light emphasis
+description.style.markdown.14=Light emphasis
+style.markdown.14=$(colour.keyword)
+# Strong emphasis
+description.style.markdown.15=Strong emphasis
+style.markdown.15=$(colour.keyword)
+# URI
+description.style.markdown.16=Inline URI
+style.markdown.16=$(colour.keyword2)
+# Link parenthesis (...)[...]
+description.style.markdown.17=Link parenthesis
+style.markdown.17=$(colour.error)
+# Link title
+description.style.markdown.18=Link title
+style.markdown.18=$(colour.preprocessor)
+# Link target
+description.style.markdown.19=Link target
+style.markdown.19=$(colour.keyword2)
+# Code (``` block)
+description.style.markdown.20=Code block (``` ... ```)
+style.markdown.20=$(colour.preprocessor)
+# Code (~~~ block)
+description.style.markdown.21=Code block (~~~ ... ~~~)
+style.markdown.21=$(colour.preprocessor)
+# Code (inline)
+description.style.markdown.22=Inline code block (`...`)
+style.markdown.22=$(colour.preprocessor)
+# Comment (%% ... %%)
+description.style.markdown.23=Block comment (%% ... %%)
+style.markdown.23=$(colour.comment)
+# Comment (<!-- ... -->)
+description.style.markdown.24=HTML Comment (<!-- ... -->)
+style.markdown.24=$(colour.comment)
+# Table border
+description.style.markdown.25=Table border (|)
+style.markdown.25=$(colour.error)
