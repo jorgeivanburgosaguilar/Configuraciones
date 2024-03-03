@@ -35,5 +35,10 @@ function Show-All-Files {
     }
 }
 
+function ChangeDirectoryToDataAnnotation {
+	Set-Location C:\Desarrollo\DataAnnotation
+}
+
 Set-Alias -Name l -Value Show-As-Linux
 Set-Alias -Name la -Value Show-All-Files
+Set-Alias -Name cddev -Value ChangeDirectoryToDataAnnotation
