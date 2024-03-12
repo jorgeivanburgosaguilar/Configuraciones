@@ -1,5 +1,9 @@
 function Show-As-Linux {
-    Get-ChildItem -Attributes ReadOnly, Hidden, Directory, Archive, Device, Normal, Temporary, SparseFile, ReparsePoint, Compressed, Offline, NotContentIndexed, Encrypted, IntegrityStream, NoScrubData | ForEach-Object {
+    param (
+        [string]$Path = '.'
+    )
+
+    Get-ChildItem -Path $Path -Attributes ReadOnly, Hidden, Directory, Archive, Device, Normal, Temporary, SparseFile, ReparsePoint, Compressed, Offline, NotContentIndexed, Encrypted, IntegrityStream, NoScrubData | ForEach-Object {
         $color = "White"
 
         # Change color based on attribute
@@ -17,7 +21,11 @@ function Show-As-Linux {
 }
 
 function Show-All-Files {
-    Get-ChildItem -Force -Attributes ReadOnly, Hidden, System, Directory, Archive, Device, Normal, Temporary, SparseFile, ReparsePoint, Compressed, Offline, NotContentIndexed, Encrypted, IntegrityStream, NoScrubData | ForEach-Object {
+    param (
+        [string]$Path = '.'
+    )
+
+    Get-ChildItem -Path $Path -Force -Attributes ReadOnly, Hidden, System, Directory, Archive, Device, Normal, Temporary, SparseFile, ReparsePoint, Compressed, Offline, NotContentIndexed, Encrypted, IntegrityStream, NoScrubData | ForEach-Object {
         $color = "White"
 
         # Change color based on attribute
