@@ -22,11 +22,11 @@
     stat = true
 	
 [alias]
-af = difftool --tool=araxis
-afs = difftool --tool=araxis --staged
-ad = difftool --tool=araxis --dir-diff
-ads = difftool --tool=araxis --dir-diff --staged
-staash = stash --all
+	af = difftool --tool=araxis
+	afs = difftool --tool=araxis --staged
+	ad = difftool --tool=araxis --dir-diff
+	ads = difftool --tool=araxis --dir-diff --staged
+	staash = stash --all
     
 [guitool "Araxis Merge Unstaged Changes"]
 	cmd = "git difftool --tool=araxis -y"
@@ -38,9 +38,12 @@ staash = stash --all
     
 [core]
 	autocrlf = false
-	editor = code --wait
+	editor = nvim
+	autocrlf = false
+	fileMode = false
     
 [difftool]
 	prompt = false
+
 [init]
 	defaultBranch = main
