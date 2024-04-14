@@ -39,7 +39,6 @@
 [core]
 	autocrlf = false
 	editor = nvim
-	autocrlf = false
 	fileMode = false
     
 [difftool]
