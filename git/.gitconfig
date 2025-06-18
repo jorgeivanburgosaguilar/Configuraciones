@@ -27,6 +27,7 @@
     ad = difftool --tool=araxis --dir-diff
     ads = difftool --tool=araxis --dir-diff --staged
     staash = stash --all
+    deepclean = !git pack-refs --prune && git reflog expire --all && git repack -a -d -l && git rerere gc
 
 [guitool "Araxis Merge Unstaged Changes"]
     cmd = "git difftool --tool=araxis -y"
