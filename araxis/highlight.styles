@@ -385,7 +385,7 @@ style.vbscript.12=$(style.vb.12)
 #== HTML/XML-like languages
 
 # tpl is X and Mail specific
-file.patterns.web=*.html;*.htm;*.asp;*.shtml;*.htd;*.ascx;*.master;*.aspx
+file.patterns.web=*.html;*.htm;*.asp;*.shtml;*.htd;*.ascx;*.master;*.aspx;*.ejs
 file.patterns.php=*.php3;*.phtml;*.php
 file.patterns.html=$(file.patterns.web);$(file.patterns.php);*.htt;*.cfm;*.tpl;*.hta
 file.patterns.vxml=*.vxml
