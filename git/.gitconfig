@@ -20,6 +20,7 @@
 [merge]
     tool = araxis
     stat = true
+    ff = false
 
 [alias]
     af = difftool --tool=araxis
@@ -42,6 +43,7 @@
     editor = nvim
     fileMode = false
     rerere = true
+    longpaths = true
 
 [difftool]
     prompt = false
@@ -49,5 +51,9 @@
 [init]
     defaultBranch = main
 
+[pull]
+    ff = only
+
 [push]
     autoSetupRemote = true
+
