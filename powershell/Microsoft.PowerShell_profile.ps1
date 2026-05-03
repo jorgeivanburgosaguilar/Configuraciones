@@ -56,8 +56,12 @@ $PSStyle.FileInfo.Extension['.gz']  = $OneDark.Red
 $PSStyle.FileInfo.Extension['.rar'] = $OneDark.Red
 
 # --- Funciones ---
+function l {
+    Get-ChildItem @Args | Format-Table -AutoSize
+}
+
 function la {
-    Get-ChildItem -Force @Args
+    Get-ChildItem -Force @Args | Format-Table -AutoSize
 }
 
 function cddev {
@@ -65,7 +69,7 @@ function cddev {
 }
 
 # --- Aliases ---
-Set-Alias l Get-ChildItem
+Set-Alias ~ $HOME
 
 # --- Autocomplete ---
 Set-PSReadLineKeyHandler -Chord "F2" -Function AcceptSuggestion
