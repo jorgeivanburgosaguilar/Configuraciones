@@ -68,6 +68,11 @@ function cddev {
     Set-Location "D:\Desarrollo\"
 }
 
+function scoup {
+    scoop update
+    scoop status
+}
+
 # --- Aliases ---
 Set-Alias ~ $HOME
 
