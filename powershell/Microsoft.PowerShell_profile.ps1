@@ -23,7 +23,8 @@ $OneDark = @{
     Purple = $PSStyle.Foreground.FromRgb(0xC678DD)  # datos estructurados
     Red    = $PSStyle.Foreground.FromRgb(0xE06C75)  # archivos comprimidos
     Fg     = $PSStyle.Foreground.FromRgb(0xABB2BF)  # foreground suave
-    Orange = $PSStyle.Foreground.FromRgb(0xD19A66)  # acento (no usado aún)
+    Orange = $PSStyle.Foreground.FromRgb(0xD19A66)  # código fuente
+    Gray   = $PSStyle.Foreground.FromRgb(0x5C6370)  # artefactos y ruido
 }
 
 # --- $PSStyle.FileInfo: colores One Dark para Get-ChildItem / ls / l / la ---
@@ -55,38 +56,133 @@ $PSStyle.FileInfo.Extension['.tar'] = $OneDark.Red
 $PSStyle.FileInfo.Extension['.gz']  = $OneDark.Red
 $PSStyle.FileInfo.Extension['.rar'] = $OneDark.Red
 
+# Código fuente
+foreach ($e in '.ts','.tsx','.js','.jsx','.mjs','.cjs','.py','.cs','.go','.rs',
+               '.java','.rb','.php','.vue','.svelte','.sql','.html','.css','.scss','.sh') {
+    $PSStyle.FileInfo.Extension[$e] = $OneDark.Orange
+}
+
+# Configuración
+foreach ($e in '.toml','.ini','.cfg','.conf','.env','.csv',
+               '.gitignore','.gitattributes','.editorconfig','.dockerignore') {
+    $PSStyle.FileInfo.Extension[$e] = $OneDark.Purple
+}
+
+# Artefactos de build y ruido
+foreach ($e in '.log','.lock','.tmp','.cache','.map','.dll','.pdb','.obj','.lib','.bak') {
+    $PSStyle.FileInfo.Extension[$e] = $OneDark.Gray
+}
+
 # --- Funciones ---
+function Format-FileSize {
+    param([long]$Bytes)
+
+    if ($Bytes -lt 1024) { return "$Bytes" }
+
+    $units = @('K','M','G','T','P')
+    $size  = [double]$Bytes
+    $i     = -1
+    while ($size -ge 1024 -and $i -lt ($units.Count - 1)) {
+        $size = $size / 1024
+        $i++
+    }
+
+    if ($size -lt 10) { '{0:0.0}{1}' -f $size, $units[$i] }
+    else              { '{0:0}{1}'   -f $size, $units[$i] }
+}
+
+function Get-FileStyle {
+    param($Item)
+
+    if ([Console]::IsOutputRedirected) { return '' }
+    if ($Item.PSIsContainer)           { return $PSStyle.FileInfo.Directory }
+    if ($Item.LinkType)                { return $PSStyle.FileInfo.SymbolicLink }
+
+    $ext = $Item.Extension
+    if ($ext) {
+        if ($PSStyle.FileInfo.Extension.ContainsKey($ext)) { return $PSStyle.FileInfo.Extension[$ext] }
+        if (($env:PATHEXT -split ';') -contains $ext)      { return $PSStyle.FileInfo.Executable }
+    }
+    return ''
+}
+
+function Show-FileListing {
+    param($Items)
+
+    $dim   = if ([Console]::IsOutputRedirected) { '' } else { $OneDark.Gray }
+    $reset = if ($dim) { $PSStyle.Reset } else { '' }
+
+    $Items | Format-Table -AutoSize -Property @(
+        @{ Label = 'Mode'; Expression = { $_.Mode } }
+        @{ Label = 'Size'; Expression = { if ($_.PSIsContainer) { '' } else { Format-FileSize $_.Length } }
+           Alignment = 'Right' }
+        @{ Label = 'Modificado'; Expression = { '{0:yyyy-MM-dd HH:mm}' -f $_.LastWriteTime } }
+        @{ Label = 'Nombre'; Expression = {
+            $style = Get-FileStyle $_
+            $name  = if ($style) { $style + $_.Name + $PSStyle.Reset } else { $_.Name }
+            if ($_.LinkTarget) { "$name $dim-> $($_.LinkTarget)$reset" } else { $name }
+        }}
+    )
+
+    $files = @($Items | Where-Object { -not $_.PSIsContainer })
+    $dirs  = @($Items | Where-Object { $_.PSIsContainer })
+    $total = [long](($files | Measure-Object -Property Length -Sum).Sum)
+
+    "$dim{0} archivos, {1} carpetas, {2} en total$reset" -f $files.Count, $dirs.Count, (Format-FileSize $total)
+}
+
 function l {
-    Get-ChildItem @Args | Format-Table -AutoSize
+    Show-FileListing @(Get-ChildItem @Args)
 }
 
 function la {
-    Get-ChildItem -Force @Args | Format-Table -AutoSize
+    Show-FileListing @(Get-ChildItem -Force @Args)
 }
+
+$DevelopmentRoot = "D:\Desarrollo"
 
 function cddev {
     param(
         [string]$Path
     )
 
-    $developmentRoot = "D:\Desarrollo"
-
     if ([string]::IsNullOrWhiteSpace($Path)) {
-        Set-Location $developmentRoot
+        Set-Location $DevelopmentRoot
         return
     }
 
     $destination = [System.IO.Path]::GetFullPath(
-        [System.IO.Path]::Combine($developmentRoot, $Path)
+        [System.IO.Path]::Combine($DevelopmentRoot, $Path)
     )
-    $allowedPrefix = $developmentRoot + [System.IO.Path]::DirectorySeparatorChar
+    $allowedPrefix = $DevelopmentRoot + [System.IO.Path]::DirectorySeparatorChar
 
-    if ($destination -ne $developmentRoot -and
+    if ($destination -ne $DevelopmentRoot -and
         -not $destination.StartsWith($allowedPrefix, [System.StringComparison]::OrdinalIgnoreCase)) {
-        throw "La ruta debe estar dentro $developmentRoot."
+        Write-Host "La ruta debe estar dentro de $DevelopmentRoot." -ForegroundColor Red
+        return
+    }
+
+    if (-not (Test-Path -LiteralPath $destination -PathType Container)) {
+        Write-Host "La ruta '$($destination.TrimEnd([System.IO.Path]::DirectorySeparatorChar))' no existe o no es un directorio." -ForegroundColor Red
+        return
     }
 
     Set-Location $destination
+}
+
+Register-ArgumentCompleter -CommandName cddev -ParameterName Path -ScriptBlock {
+    param($commandName, $parameterName, $wordToComplete, $commandAst, $fakeBoundParameters)
+
+    $word = $wordToComplete.Trim("'", '"')
+
+    Get-ChildItem -Path (Join-Path $DevelopmentRoot "$word*") -Directory -ErrorAction SilentlyContinue |
+        ForEach-Object {
+            $relative = $_.FullName.Substring($DevelopmentRoot.Length + 1)
+            $text = if ($relative -match '\s') { "'$relative'" } else { $relative }
+            [System.Management.Automation.CompletionResult]::new(
+                $text, $relative, 'ParameterValue', $_.FullName
+            )
+        }
 }
 
 function gitstatus {
