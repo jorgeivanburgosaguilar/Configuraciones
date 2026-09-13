@@ -2,17 +2,7 @@
 # PowerShell 7 Profile - jorgeburgos
 # ============================================================
 
-# --- Prompt: título de ventana + prompt corto ---
-function prompt {
-    $loc = Get-Location
-    try {
-        if ($Host.UI.RawUI) {
-            $Host.UI.RawUI.WindowTitle = $loc
-        }
-    } catch {}
-    (Split-Path -Leaf $loc) + "> "
-}
-
+$DevelopmentRoot = "D:\Desarrollo"
 
 # --- Paleta One Dark (Atom) ---
 $OneDark = @{
@@ -25,6 +15,32 @@ $OneDark = @{
     Fg     = $PSStyle.Foreground.FromRgb(0xABB2BF)  # foreground suave
     Orange = $PSStyle.Foreground.FromRgb(0xD19A66)  # código fuente
     Gray   = $PSStyle.Foreground.FromRgb(0x5C6370)  # artefactos y ruido
+}
+
+# --- Prompt: título de ventana + prompt corto ---
+function prompt {
+    $loc = Get-Location
+
+    try {
+        if ($Host.UI.RawUI) {
+            $Host.UI.RawUI.WindowTitle = $loc
+        }
+    } catch {}
+
+    $gitSuffix = ''
+
+    if (
+        $loc.Provider.Name -eq 'FileSystem' -and
+        (Get-Command git -CommandType Application -ErrorAction Ignore)
+    ) {
+        $branch = git -C $loc.ProviderPath branch --show-current 2>$null
+
+        if ($LASTEXITCODE -eq 0 -and $branch) {
+            $gitSuffix = " $($OneDark.Yellow)($branch)$($PSStyle.Reset)"
+        }
+    }
+
+    (Split-Path -Leaf $loc) + $gitSuffix + '> '
 }
 
 # --- $PSStyle.FileInfo: colores One Dark para Get-ChildItem / ls / l / la ---
@@ -139,8 +155,6 @@ function la {
     Show-FileListing @(Get-ChildItem -Force @Args)
 }
 
-$DevelopmentRoot = "D:\Desarrollo"
-
 function cddev {
     param(
         [string]$Path
@@ -250,3 +264,4 @@ Set-Alias ~ $HOME
 # --- Autocomplete ---
 Set-PSReadLineKeyHandler -Chord "F2" -Function AcceptSuggestion
 Set-PSReadLineKeyHandler -Chord "RightArrow" -Function ForwardWord
+Set-PSReadLineKeyHandler -Chord "Ctrl+f" -Function ForwardWord
