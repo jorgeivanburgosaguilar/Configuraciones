@@ -210,7 +210,7 @@ function gitstatus {
     $prev = [Console]::OutputEncoding
     try {
         [Console]::OutputEncoding = [Text.Encoding]::UTF8
-        $lines = @(git -c core.quotepath=false status -s)
+        $lines = @(git -c core.quotepath=false status --porcelain=v1)
     }
     finally {
         [Console]::OutputEncoding = $prev
@@ -224,13 +224,17 @@ function gitstatus {
     $entries = foreach ($line in $lines) {
         $path = $line.Substring(3)
         if ($path -match '^(.*) -> (.*)$') { $path = $Matches[2] }
+        $code = $line.Substring(0, 2)
+        $isConflict = $code -match '^(DD|AU|UD|UA|DU|AA|UU)$'
         [PSCustomObject]@{
-            Code = $line.Substring(0, 2)
-            Path = $path.Trim('"')
+            Code   = $code
+            Path   = $path.Trim('"')
+            Staged = -not $isConflict -and $code[0] -match '[MTADRC]'
         }
     }
 
     $width = (@($entries.Path) | Measure-Object -Property Length -Maximum).Maximum
+    $stageWidth = '[staged]'.Length
 
     foreach ($e in $entries) {
         $code  = $e.Code
@@ -246,10 +250,11 @@ function gitstatus {
         $stamp = ''
         if ($code -notmatch 'D') {
             $item = Get-Item -LiteralPath (Join-Path $root $e.Path.Replace('/', [IO.Path]::DirectorySeparatorChar)) -Force -ErrorAction SilentlyContinue
-            if ($item) { $stamp = "  ({0:yyyy-MM-dd HH:mm})" -f $item.LastWriteTime }
+            if ($item) { $stamp = "({0:yyyy-MM-dd HH:mm})" -f $item.LastWriteTime }
         }
 
-        Write-Host ("{0} {1}{2}" -f $code, $e.Path.PadRight($width), $stamp) -ForegroundColor $color
+        $stage = if ($e.Staged) { '[staged]' } else { '' }
+        Write-Host ("{0} {1}  {2}  {3}" -f $code, $e.Path.PadRight($width), $stage.PadRight($stageWidth), $stamp) -ForegroundColor $color
     }
 }
 
