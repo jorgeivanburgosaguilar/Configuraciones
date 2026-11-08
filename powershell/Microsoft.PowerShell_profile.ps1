@@ -1,4 +1,4 @@
-# ============================================================
+﻿# ============================================================
 # PowerShell 7 Profile - jorgeburgos
 # ============================================================
 
@@ -90,6 +90,25 @@ foreach ($e in '.log','.lock','.tmp','.cache','.map','.dll','.pdb','.obj','.lib'
 }
 
 # --- Funciones ---
+# Bash-style environment variable export: export NAME=value [NAME=value ...]
+function export {
+    param(
+        [Parameter(Mandatory, ValueFromRemainingArguments)]
+        [string[]]$Assignments
+    )
+
+    foreach ($assignment in $Assignments) {
+        $separator = $assignment.IndexOf('=')
+        if ($separator -le 0) {
+            throw "Invalid assignment '$assignment'. Expected NAME=value."
+        }
+
+        $name  = $assignment.Substring(0, $separator)
+        $value = $assignment.Substring($separator + 1)
+        Set-Item -Path "Env:$name" -Value $value
+    }
+}
+
 function Format-FileSize {
     param([long]$Bytes)
 
@@ -269,4 +288,4 @@ Set-Alias ~ $HOME
 # --- Autocomplete ---
 Set-PSReadLineKeyHandler -Chord "F2" -Function AcceptSuggestion
 Set-PSReadLineKeyHandler -Chord "RightArrow" -Function ForwardWord
-Set-PSReadLineKeyHandler -Chord "Ctrl+f" -Function ForwardWord
+Set-PSReadLineKeyHandler -Chord "Alt+f" -Function ForwardWord
